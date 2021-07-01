@@ -126,10 +126,10 @@
 <tbody><tr>
 <td>符号</td>
 <td>$\N$</td>
-<td>$\N^+$ 或 $\N^*$</td>
-<td>$\Z$</td>
-<td>$\Q$</td>
-<td>$\R$</td>
+<td>$\mathbb{N}^+$ 或 $\mathbb{N}^*$</td>
+<td>$\mathbb{Z}$</td>
+<td>$\mathbb{Q}$</td>
+<td>$\mathbb{R}$</td>
 </tr>
 <tr>
 <td>代表词汇</td>
@@ -154,7 +154,7 @@
 <p> 同理可得 $q=\frac12$</p>
 </li>
 </ol>
-<h3 id="描述法"><a href="#描述法" class="headerlink" title="描述法"></a>描述法</h3><p>$$<br>{x|p(x)}<br>\<br>{x\in\R|x&gt;1}<br>\<br>{(x,y)|y=x}<br>$$</p>
+<h3 id="描述法"><a href="#描述法" class="headerlink" title="描述法"></a>描述法</h3><p>$$<br>{x|p(x)}<br>\<br>{x\in\mathbb{R}|x&gt;1}<br>\<br>{(x,y)|y=x}<br>$$</p>
 <h4 id="例题-2"><a href="#例题-2" class="headerlink" title="例题 2"></a>例题 2</h4><blockquote>
 <p>列举 $E={x\in\Z|x^2-3x-1\le0}$</p>
 </blockquote>
