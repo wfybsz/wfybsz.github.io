@@ -206,7 +206,7 @@
 </ul>
 <h1 id="常用逻辑用语"><a href="#常用逻辑用语" class="headerlink" title="常用逻辑用语"></a>常用逻辑用语</h1><h2 id="命题"><a href="#命题" class="headerlink" title="命题"></a>命题</h2><h3 id="否定"><a href="#否定" class="headerlink" title="否定"></a>否定</h3><p>$p$ 的否定 $\lnot p$</p>
 <h2 id="量词"><a href="#量词" class="headerlink" title="量词"></a>量词</h2><h3 id="全称量词"><a href="#全称量词" class="headerlink" title="全称量词"></a>全称量词</h3><p>$$<br>\forall x\in M,p(x)<br>$$</p>
-<h3 id="存在量词"><a href="#存在量词" class="headerlink" title="存在量词"></a>存在量词</h3><p>$$<br>\exists x\in M,p(x)$<br>$$</p>
+<h3 id="存在量词"><a href="#存在量词" class="headerlink" title="存在量词"></a>存在量词</h3><p>$$<br>\exists x\in M,p(x)<br>$$</p>
 <h3 id="否定-1"><a href="#否定-1" class="headerlink" title="否定"></a>否定</h3><h4 id="例题-5"><a href="#例题-5" class="headerlink" title="例题 5"></a>例题 5</h4><blockquote>
 <p>$p$：“我们班所有人都喜欢学习”，求 $\lnot p$</p>
 </blockquote>
