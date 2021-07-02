@@ -103,6 +103,145 @@
       </tags>
   </entry>
   <entry>
+    <title>数学笔记</title>
+    <url>/2021/07/01/%E6%95%B0%E5%AD%A6%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[<h1 id="集合"><a href="#集合" class="headerlink" title="集合"></a>集合</h1><p>大写字母表示</p>
+<h2 id="元素"><a href="#元素" class="headerlink" title="元素"></a>元素</h2><p>小写字母表示</p>
+<ul>
+<li>确定性</li>
+<li><strong>互异性</strong></li>
+<li>无序性</li>
+</ul>
+<h2 id="集合的表示"><a href="#集合的表示" class="headerlink" title="集合的表示"></a>集合的表示</h2><h3 id="常用数集"><a href="#常用数集" class="headerlink" title="常用数集"></a>常用数集</h3><table>
+<thead>
+<tr>
+<th>集合</th>
+<th>自然数集</th>
+<th>正整数集</th>
+<th>整数集</th>
+<th>有理数集</th>
+<th>实数集</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>符号</td>
+<td>$\mathbb{N}$</td>
+<td>$\mathbb{N}^+$ 或 $\mathbb{N}^*$</td>
+<td>$\mathbb{Z}$</td>
+<td>$\mathbb{Q}$</td>
+<td>$\mathbb{R}$</td>
+</tr>
+<tr>
+<td>代表词汇</td>
+<td>Natural Numbers</td>
+<td></td>
+<td>Zahlen</td>
+<td>Quotient</td>
+<td>Real Numbers</td>
+</tr>
+</tbody></table>
+<span id="more"></span>
+
+<h3 id="列举法"><a href="#列举法" class="headerlink" title="列举法"></a>列举法</h3><h4 id="例题-1"><a href="#例题-1" class="headerlink" title="例题 1"></a>例题 1</h4><blockquote>
+<p>已知集合 $A={a,a+d,a+2d}$ ，集合 $B={a,aq,aq^2}$ 且满足 $A=B$ ，求 $q$</p>
+</blockquote>
+<p>讨论：</p>
+<ol>
+<li><p>$$<br> \begin{cases}<br> a+d=aq<br> \<br> a+2d=aq^2<br> \end{cases}<br> \<br> $$</p>
+<p> 推导<br> $$<br> \begin{cases}<br> d=a(q-1)<br> \<br> 2d=a(q^2-1)<br> \end{cases}<br> \<br> \begin{cases}<br> \dfrac{2d}d=2=\dfrac{q^2-1}{q-1}=q+1<br> \end{cases}<br> \<br> q=1\text{，舍}<br> $$</p>
+</li>
+<li><p>$$<br> \begin{cases}<br> a+d=aq^2<br> \<br> a+2d=aq<br> \end{cases}<br> $$</p>
+<p> 同理可得 $q=\frac12$</p>
+</li>
+</ol>
+<h3 id="描述法"><a href="#描述法" class="headerlink" title="描述法"></a>描述法</h3><p>$$<br>{x|p(x)}<br>\<br>{x\in\mathbb{R}|x&gt;1}<br>\<br>{(x,y)|y=x}<br>$$</p>
+<h4 id="例题-2"><a href="#例题-2" class="headerlink" title="例题 2"></a>例题 2</h4><blockquote>
+<p>列举 $E={x\in\mathbb{Z}|x^2-3x-1\le0}$</p>
+</blockquote>
+<p>当 $x^2-3x-1=0$ 时，<br>$$<br>x=\dfrac{3\pm\sqrt{13}}{2}<br>$$<br>结合抛物线 $y=x^2-3x-1$ 的图像可得 $E={0,1,2,3}$</p>
+<h4 id="例题-3"><a href="#例题-3" class="headerlink" title="例题 3"></a>例题 3</h4><blockquote>
+<p>已知集合 $M={x|(x-a)(x^2-ax+a-1)=0}$ 各元素之和为 $3$ ，求 $a$</p>
+</blockquote>
+<p>考虑特征性质<br>$$<br>(x-a)(x^2-ax+a-1)=(x-a)(x-a+1)(x-1)=0<br>$$<br>则<br>$$<br>x_1=a,x_2=a-1,x_3=1<br>$$<br>解得 $a=\frac32$</p>
+<p>若 $a=1$ ，则和为 $1$ ；</p>
+<p>若 $a-1=1$ 即 $a=2$ ，则和为 $3$</p>
+<p>综上， $a=\frac32$ 或 $a=2$</p>
+<h3 id="区间表示法"><a href="#区间表示法" class="headerlink" title="区间表示法"></a>区间表示法</h3><p>略</p>
+<h3 id="图示法（韦恩图）"><a href="#图示法（韦恩图）" class="headerlink" title="图示法（韦恩图）"></a>图示法（韦恩图）</h3><p>略</p>
+<h2 id="集合与集合的关系"><a href="#集合与集合的关系" class="headerlink" title="集合与集合的关系"></a>集合与集合的关系</h2><p>$$<br>{1,2}\sube{1,2,3}<br>\<br>{1,2}\text{包含于}{1,2,3}<br>\<br>{1,2,3}\supe{1,2}<br>\<br>{1,2,3}\text{包含}{1,2}<br>$$</p>
+<p>$$<br>\varnothing\sube A<br>$$</p>
+<ul>
+<li>真子集 $\subsetneq$</li>
+<li>相等</li>
+</ul>
+<h4 id="例题-4"><a href="#例题-4" class="headerlink" title="例题 4"></a>例题 4</h4><blockquote>
+<p>$X={x|x=4n+1,n\in\mathbb Z},Y={x|x=2n+1,n\in\mathbb Z},L={x|x=4n+1\text或x=4n-1,n\in\mathbb Z}$</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>A. $X\subsetneq Y\subsetneq L$</th>
+<th>B. $X\subsetneq Y=L$</th>
+<th>C. $Y\subsetneq X\subsetneq L$</th>
+<th>D. $X\subsetneq L\subsetneq Y$</th>
+</tr>
+</thead>
+</table>
+<p>B，略</p>
+<h2 id="集合的运算"><a href="#集合的运算" class="headerlink" title="集合的运算"></a>集合的运算</h2><p>$$<br>A\cap B={x|x\in A\text且x\in B}<br>$$</p>
+<p>$$<br>A\cup B={x|x\in A\text或x\in B}<br>$$</p>
+<p>$$<br>A\cap\complement_UA=\varnothing<br>$$</p>
+<h3 id="cap-的性质"><a href="#cap-的性质" class="headerlink" title="$\cap$ 的性质"></a>$\cap$ 的性质</h3><ul>
+<li>$A\cap B=B\cap A$</li>
+<li>$A\cap B\sube A,A\cap B\sube B$</li>
+</ul>
+<h3 id="cup-的性质"><a href="#cup-的性质" class="headerlink" title="$\cup$ 的性质"></a>$\cup$ 的性质</h3><ul>
+<li>$A\cup B=B\cup A$</li>
+<li>$A\cup B\supe A,A\cup B\supe B$</li>
+</ul>
+<h3 id="complement-的性质"><a href="#complement-的性质" class="headerlink" title="$\complement$ 的性质"></a>$\complement$ 的性质</h3><ul>
+<li>$A\cap\complement_UA=\varnothing$</li>
+<li>$A\cup\complement_UA=U$</li>
+<li>$A\sube B\lrarr\complement_UA\supe\complement_UB$</li>
+</ul>
+<h1 id="常用逻辑用语"><a href="#常用逻辑用语" class="headerlink" title="常用逻辑用语"></a>常用逻辑用语</h1><h2 id="命题"><a href="#命题" class="headerlink" title="命题"></a>命题</h2><h3 id="否定"><a href="#否定" class="headerlink" title="否定"></a>否定</h3><p>$p$ 的否定 $\lnot p$</p>
+<h2 id="量词"><a href="#量词" class="headerlink" title="量词"></a>量词</h2><h3 id="全称量词"><a href="#全称量词" class="headerlink" title="全称量词"></a>全称量词</h3><p>$$<br>\forall x\in M,p(x)<br>$$</p>
+<h3 id="存在量词"><a href="#存在量词" class="headerlink" title="存在量词"></a>存在量词</h3><p>$$<br>\exist x\in M,p(x)$<br>$$</p>
+<h3 id="否定-1"><a href="#否定-1" class="headerlink" title="否定"></a>否定</h3><h4 id="例题-5"><a href="#例题-5" class="headerlink" title="例题 5"></a>例题 5</h4><blockquote>
+<p>$p$：“我们班所有人都喜欢学习”，求 $\lnot p$</p>
+</blockquote>
+<p>$\lnot p$：“我们班有些人不喜欢学习”</p>
+<blockquote>
+<p>$p$：“我们班有些人喜欢学习”，求 $\lnot p$</p>
+</blockquote>
+<p>$\lnot p$：“我们班所有人都不喜欢学习”</p>
+<ul>
+<li>$p:\forall x\in A,p(x)\rarr\lnot p:\exist x\in A,\lnot p(x)$</li>
+<li>$p:\exist x\in A,p(x)\rarr\lnot p:\forall x\in A,\lnot p(x)$</li>
+</ul>
+]]></content>
+      <tags>
+        <tag>笔记</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>题解 UVA297 【四分树 Quadtrees】</title>
+    <url>/2020/05/01/%E9%A2%98%E8%A7%A3-UVA297-%E3%80%90%E5%9B%9B%E5%88%86%E6%A0%91-Quadtrees%E3%80%91/</url>
+    <content><![CDATA[<p>这种树是可以得知一个节点有没有儿子的，所以只需要先序遍历就可以直接还原这棵树。</p>
+<p>得出解法：边输入边动态建树，把两棵树合并，然后算像素数量。每一步都是用dfs，且都遵循“黑色染，白色空，灰色继续递归”的规则。</p>
+<p>建树：使用递归动态建树。对于每一层递归，都当做输入一个子树，利用指针和 <code>new</code> 的灵活性致使过程很方便。</p>
+<p>合并：黑色染，白色被染，灰色继续递归。</p>
+<p>计数：黑色返回面积，白色返回零，灰色继续递归成更小的子方块处理。</p>
+<span id="more"></span>
+
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">namespace</span> io&#123;<span class="comment">/* 快读太长 删掉 */</span>&#125;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> in io::read()</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> print io::write</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ri register int</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> OvO cout&lt;&lt;<span class="meta-string">&quot;OvO&quot;</span>;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> n;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">node</span>&#123;</span></span><br><span class="line">	<span class="keyword">char</span> c;</span><br><span class="line">	node *sp[<span class="number">4</span>];<span class="comment">// 使用指针实现树，有四个儿子</span></span><br><span class="line">	<span class="built_in">node</span>()&#123;</span><br><span class="line">        c = <span class="number">0</span>;</span><br><span class="line">        sp[<span class="number">0</span>] = sp[<span class="number">1</span>] = sp[<span class="number">2</span>] = sp[<span class="number">3</span>] = <span class="literal">NULL</span>;<span class="comment">// 初始化成空指针</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;*root,*root_;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">dfs</span><span class="params">(node*&amp;p)</span></span>&#123;<span class="comment">// 递归建树。引用指针，也就是一个指针类型在传参的时候引用，注意node&amp;*p是错的</span></span><br><span class="line">	p = <span class="keyword">new</span> node;<span class="comment">// 申请内存开一个子树准备输入</span></span><br><span class="line">	<span class="keyword">while</span>(!(p-&gt;c == <span class="string">&#x27;f&#x27;</span> <span class="keyword">or</span> p-&gt;c == <span class="string">&#x27;e&#x27;</span> <span class="keyword">or</span> p-&gt;c == <span class="string">&#x27;p&#x27;</span>))<span class="comment">// 吃掉空字符</span></span><br><span class="line">		p-&gt;c = <span class="built_in">getchar</span>();</span><br><span class="line">	<span class="built_in"><span class="keyword">switch</span></span>(p-&gt;c)&#123;</span><br><span class="line">		<span class="keyword">case</span> <span class="string">&#x27;f&#x27;</span>:<span class="keyword">return</span>;<span class="keyword">break</span>;<span class="comment">// 空的或者满的就没有儿子了，停</span></span><br><span class="line">		<span class="keyword">case</span> <span class="string">&#x27;e&#x27;</span>:<span class="keyword">return</span>;<span class="keyword">break</span>;</span><br><span class="line">		<span class="keyword">case</span> <span class="string">&#x27;p&#x27;</span>:&#123;</span><br><span class="line">			<span class="keyword">for</span>(ri i = <span class="number">0</span>;i &lt; <span class="number">4</span>;++i)</span><br><span class="line">				<span class="built_in">dfs</span>(p-&gt;sp[i]);<span class="comment">// 有黑有白，建立四个子树</span></span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">merge</span><span class="params">(node *&amp;p,node *p_)</span></span>&#123;<span class="comment">// 把p_合并到p</span></span><br><span class="line">	<span class="keyword">if</span>(p_ == <span class="literal">NULL</span>)<span class="comment">// 既然要合并的是空的……</span></span><br><span class="line">		<span class="keyword">return</span>;</span><br><span class="line">	<span class="keyword">if</span>(p-&gt;c == <span class="string">&#x27;f&#x27;</span> <span class="keyword">or</span> p_-&gt;c == <span class="string">&#x27;f&#x27;</span>)&#123;<span class="comment">// 任意一个是全黑就可以直接染黑</span></span><br><span class="line">		p-&gt;c = <span class="string">&#x27;f&#x27;</span>;</span><br><span class="line">		<span class="keyword">return</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span>(p-&gt;c == <span class="string">&#x27;e&#x27;</span>)&#123;<span class="comment">// 如果是纯白（则没有儿子）就可以直接染色</span></span><br><span class="line">		p = p_;</span><br><span class="line">		<span class="keyword">return</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span>(ri i = <span class="number">0</span>;i &lt; <span class="number">4</span>;++i)</span><br><span class="line">		<span class="built_in">merge</span>(p-&gt;sp[i],p_-&gt;sp[i]);<span class="comment">// 两个要合并的树都有黑有白，那么就递归给儿子们处理</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">count</span><span class="params">(node *p,<span class="keyword">int</span> edge)</span></span>&#123;<span class="comment">// 记录黑像素数量。edge表示子方块的边长</span></span><br><span class="line">	<span class="keyword">if</span>(p-&gt;c == <span class="string">&#x27;f&#x27;</span>)<span class="comment">// 纯黑，返回面积</span></span><br><span class="line">		<span class="keyword">return</span> edge * edge;</span><br><span class="line">	<span class="keyword">if</span>(p-&gt;c == <span class="string">&#x27;e&#x27;</span>)<span class="comment">// 纯白，返回0</span></span><br><span class="line">		<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	ri tot = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span>(ri i = <span class="number">0</span>;i &lt; <span class="number">4</span>;++i)</span><br><span class="line">		tot += <span class="built_in">count</span>(p-&gt;sp[i],edge / <span class="number">2</span>);<span class="comment">// 有黑有白，递归给儿子们记录儿子们给的值</span></span><br><span class="line">	<span class="keyword">return</span> tot;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span><span class="comment">// 主程序就很整洁了，完全体现思路</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	n = in;</span><br><span class="line">	<span class="keyword">while</span>(n--)&#123;</span><br><span class="line">		<span class="built_in">dfs</span>(root);<span class="comment">// 递归建树1</span></span><br><span class="line">		<span class="built_in">dfs</span>(root_);<span class="comment">// 递归建树2</span></span><br><span class="line">		<span class="built_in">merge</span>(root,root_);<span class="comment">// 合并</span></span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;There are %d black pixels.\n&quot;</span>,<span class="built_in">count</span>(root,<span class="number">32</span>));<span class="comment">// 输出，这里边长确定是32</span></span><br><span class="line">		root = root_ = <span class="literal">NULL</span>;<span class="comment">// 不要忘记清零，它俩还需要服务这个点的下一组数据</span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    OvO</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <tags>
+        <tag>题解</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>疫情下的数学建模</title>
     <url>/2020/08/10/%E7%96%AB%E6%83%85%E4%B8%8B%E7%9A%84%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1/</url>
     <content><![CDATA[<blockquote>
@@ -228,157 +367,6 @@
 ]]></content>
   </entry>
   <entry>
-    <title>题解 UVA297 【四分树 Quadtrees】</title>
-    <url>/2020/05/01/%E9%A2%98%E8%A7%A3-UVA297-%E3%80%90%E5%9B%9B%E5%88%86%E6%A0%91-Quadtrees%E3%80%91/</url>
-    <content><![CDATA[<p>这种树是可以得知一个节点有没有儿子的，所以只需要先序遍历就可以直接还原这棵树。</p>
-<p>得出解法：边输入边动态建树，把两棵树合并，然后算像素数量。每一步都是用dfs，且都遵循“黑色染，白色空，灰色继续递归”的规则。</p>
-<p>建树：使用递归动态建树。对于每一层递归，都当做输入一个子树，利用指针和 <code>new</code> 的灵活性致使过程很方便。</p>
-<p>合并：黑色染，白色被染，灰色继续递归。</p>
-<p>计数：黑色返回面积，白色返回零，灰色继续递归成更小的子方块处理。</p>
-<span id="more"></span>
-
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">namespace</span> io&#123;<span class="comment">/* 快读太长 删掉 */</span>&#125;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> in io::read()</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> print io::write</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ri register int</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> OvO cout&lt;&lt;<span class="meta-string">&quot;OvO&quot;</span>;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> n;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">node</span>&#123;</span></span><br><span class="line">	<span class="keyword">char</span> c;</span><br><span class="line">	node *sp[<span class="number">4</span>];<span class="comment">// 使用指针实现树，有四个儿子</span></span><br><span class="line">	<span class="built_in">node</span>()&#123;</span><br><span class="line">        c = <span class="number">0</span>;</span><br><span class="line">        sp[<span class="number">0</span>] = sp[<span class="number">1</span>] = sp[<span class="number">2</span>] = sp[<span class="number">3</span>] = <span class="literal">NULL</span>;<span class="comment">// 初始化成空指针</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;*root,*root_;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">dfs</span><span class="params">(node*&amp;p)</span></span>&#123;<span class="comment">// 递归建树。引用指针，也就是一个指针类型在传参的时候引用，注意node&amp;*p是错的</span></span><br><span class="line">	p = <span class="keyword">new</span> node;<span class="comment">// 申请内存开一个子树准备输入</span></span><br><span class="line">	<span class="keyword">while</span>(!(p-&gt;c == <span class="string">&#x27;f&#x27;</span> <span class="keyword">or</span> p-&gt;c == <span class="string">&#x27;e&#x27;</span> <span class="keyword">or</span> p-&gt;c == <span class="string">&#x27;p&#x27;</span>))<span class="comment">// 吃掉空字符</span></span><br><span class="line">		p-&gt;c = <span class="built_in">getchar</span>();</span><br><span class="line">	<span class="built_in"><span class="keyword">switch</span></span>(p-&gt;c)&#123;</span><br><span class="line">		<span class="keyword">case</span> <span class="string">&#x27;f&#x27;</span>:<span class="keyword">return</span>;<span class="keyword">break</span>;<span class="comment">// 空的或者满的就没有儿子了，停</span></span><br><span class="line">		<span class="keyword">case</span> <span class="string">&#x27;e&#x27;</span>:<span class="keyword">return</span>;<span class="keyword">break</span>;</span><br><span class="line">		<span class="keyword">case</span> <span class="string">&#x27;p&#x27;</span>:&#123;</span><br><span class="line">			<span class="keyword">for</span>(ri i = <span class="number">0</span>;i &lt; <span class="number">4</span>;++i)</span><br><span class="line">				<span class="built_in">dfs</span>(p-&gt;sp[i]);<span class="comment">// 有黑有白，建立四个子树</span></span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">merge</span><span class="params">(node *&amp;p,node *p_)</span></span>&#123;<span class="comment">// 把p_合并到p</span></span><br><span class="line">	<span class="keyword">if</span>(p_ == <span class="literal">NULL</span>)<span class="comment">// 既然要合并的是空的……</span></span><br><span class="line">		<span class="keyword">return</span>;</span><br><span class="line">	<span class="keyword">if</span>(p-&gt;c == <span class="string">&#x27;f&#x27;</span> <span class="keyword">or</span> p_-&gt;c == <span class="string">&#x27;f&#x27;</span>)&#123;<span class="comment">// 任意一个是全黑就可以直接染黑</span></span><br><span class="line">		p-&gt;c = <span class="string">&#x27;f&#x27;</span>;</span><br><span class="line">		<span class="keyword">return</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span>(p-&gt;c == <span class="string">&#x27;e&#x27;</span>)&#123;<span class="comment">// 如果是纯白（则没有儿子）就可以直接染色</span></span><br><span class="line">		p = p_;</span><br><span class="line">		<span class="keyword">return</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span>(ri i = <span class="number">0</span>;i &lt; <span class="number">4</span>;++i)</span><br><span class="line">		<span class="built_in">merge</span>(p-&gt;sp[i],p_-&gt;sp[i]);<span class="comment">// 两个要合并的树都有黑有白，那么就递归给儿子们处理</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">count</span><span class="params">(node *p,<span class="keyword">int</span> edge)</span></span>&#123;<span class="comment">// 记录黑像素数量。edge表示子方块的边长</span></span><br><span class="line">	<span class="keyword">if</span>(p-&gt;c == <span class="string">&#x27;f&#x27;</span>)<span class="comment">// 纯黑，返回面积</span></span><br><span class="line">		<span class="keyword">return</span> edge * edge;</span><br><span class="line">	<span class="keyword">if</span>(p-&gt;c == <span class="string">&#x27;e&#x27;</span>)<span class="comment">// 纯白，返回0</span></span><br><span class="line">		<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	ri tot = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span>(ri i = <span class="number">0</span>;i &lt; <span class="number">4</span>;++i)</span><br><span class="line">		tot += <span class="built_in">count</span>(p-&gt;sp[i],edge / <span class="number">2</span>);<span class="comment">// 有黑有白，递归给儿子们记录儿子们给的值</span></span><br><span class="line">	<span class="keyword">return</span> tot;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span><span class="comment">// 主程序就很整洁了，完全体现思路</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	n = in;</span><br><span class="line">	<span class="keyword">while</span>(n--)&#123;</span><br><span class="line">		<span class="built_in">dfs</span>(root);<span class="comment">// 递归建树1</span></span><br><span class="line">		<span class="built_in">dfs</span>(root_);<span class="comment">// 递归建树2</span></span><br><span class="line">		<span class="built_in">merge</span>(root,root_);<span class="comment">// 合并</span></span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;There are %d black pixels.\n&quot;</span>,<span class="built_in">count</span>(root,<span class="number">32</span>));<span class="comment">// 输出，这里边长确定是32</span></span><br><span class="line">		root = root_ = <span class="literal">NULL</span>;<span class="comment">// 不要忘记清零，它俩还需要服务这个点的下一组数据</span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    OvO</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <tags>
-        <tag>题解</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>题解 P1569 【[USACO11FEB]属牛的抗议Generic Cow Prote…】</title>
-    <url>/2019/10/05/%E9%A2%98%E8%A7%A3P1569%E3%80%90-USACO11FEB-%E5%B1%9E%E7%89%9B%E7%9A%84%E6%8A%97%E8%AE%AEGeneric-Cow-Prote%E2%80%A6%E3%80%91/</url>
-    <content><![CDATA[<p>典型的一维 DP。</p>
-<p>既然是连续的，那么 $sum_i$ 表示前 $i$ 个数的和，$dp_i$ 表示前 $i$ 个数的答案，也就是前 $i$ 头奶牛最多分成 $dp_i$ 组。</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> OvO cout&lt;&lt;<span class="meta-string">&quot;OvO&quot;</span>;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> NR = <span class="number">1e3</span> + <span class="number">10</span>;</span><br><span class="line"><span class="keyword">int</span> n,dp[NR],sum[NR];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">memset</span>(dp,<span class="number">-999999</span>,<span class="built_in"><span class="keyword">sizeof</span></span>(dp));<span class="comment">//预设成最小，这里-999999（我也忘了是bit还是Byte了）大概就接近int最小值</span></span><br><span class="line">	cin&gt;&gt;n;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>;i &lt;= n;++i)&#123;</span><br><span class="line">		cin&gt;&gt;sum[i];</span><br><span class="line">		sum[i] += sum[i - <span class="number">1</span>];<span class="comment">//这里要记录的是前i个数的和</span></span><br><span class="line">	&#125;</span><br><span class="line">	dp[<span class="number">0</span>] = <span class="number">0</span>;<span class="comment">//第一个元素设为0，方便下面的j = 0处理</span></span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>;i &lt;= n;++i)&#123;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span>;j &lt; i;++j)</span><br><span class="line">			<span class="keyword">if</span>(sum[i] - sum[j] &gt;= <span class="number">0</span>)<span class="comment">//如果这一段的理智度可以接受</span></span><br><span class="line">				dp[i] = <span class="built_in">max</span>(dp[j] + <span class="number">1</span>,dp[i]);<span class="comment">//判断大小，决定状态</span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span>(dp[n] &lt; <span class="number">-1e9</span>)</span><br><span class="line">		cout&lt;&lt;<span class="string">&quot;Impossible&quot;</span>;<span class="comment">//没有算出结果，也就是没有状态变动，无解</span></span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">		cout&lt;&lt;dp[n];<span class="comment">//有解，输出答案</span></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    OvO</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <tags>
-        <tag>题解</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>数学笔记</title>
-    <url>/2021/07/01/%E6%95%B0%E5%AD%A6%E7%AC%94%E8%AE%B0/</url>
-    <content><![CDATA[<h1 id="集合"><a href="#集合" class="headerlink" title="集合"></a>集合</h1><p>大写字母表示</p>
-<h2 id="元素"><a href="#元素" class="headerlink" title="元素"></a>元素</h2><p>小写字母表示</p>
-<ul>
-<li>确定性</li>
-<li><strong>互异性</strong></li>
-<li>无序性</li>
-</ul>
-<h2 id="集合的表示"><a href="#集合的表示" class="headerlink" title="集合的表示"></a>集合的表示</h2><h3 id="常用数集"><a href="#常用数集" class="headerlink" title="常用数集"></a>常用数集</h3><table>
-<thead>
-<tr>
-<th>集合</th>
-<th>自然数集</th>
-<th>正整数集</th>
-<th>整数集</th>
-<th>有理数集</th>
-<th>实数集</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>符号</td>
-<td>$\mathbb{N}$</td>
-<td>$\mathbb{N}^+$ 或 $\mathbb{N}^*$</td>
-<td>$\mathbb{Z}$</td>
-<td>$\mathbb{Q}$</td>
-<td>$\mathbb{R}$</td>
-</tr>
-<tr>
-<td>代表词汇</td>
-<td>Natural Numbers</td>
-<td></td>
-<td>Zahlen</td>
-<td>Quotient</td>
-<td>Real Numbers</td>
-</tr>
-</tbody></table>
-<span id="more"></span>
-
-<h3 id="列举法"><a href="#列举法" class="headerlink" title="列举法"></a>列举法</h3><h4 id="例题-1"><a href="#例题-1" class="headerlink" title="例题 1"></a>例题 1</h4><blockquote>
-<p>已知集合 $A={a,a+d,a+2d}$ ，集合 $B={a,aq,aq^2}$ 且满足 $A=B$ ，求 $q$</p>
-</blockquote>
-<p>讨论：</p>
-<ol>
-<li><p>$$<br> \begin{cases}<br> a+d=aq<br> \<br> a+2d=aq^2<br> \end{cases}<br> \<br> $$</p>
-<p> 推导<br> $$<br> \begin{cases}<br> d=a(q-1)<br> \<br> 2d=a(q^2-1)<br> \end{cases}<br> \<br> \begin{cases}<br> \dfrac{2d}d=2=\dfrac{q^2-1}{q-1}=q+1<br> \end{cases}<br> \<br> q=1\text{，舍}<br> $$</p>
-</li>
-<li><p>$$<br> \begin{cases}<br> a+d=aq^2<br> \<br> a+2d=aq<br> \end{cases}<br> $$</p>
-<p> 同理可得 $q=\frac12$</p>
-</li>
-</ol>
-<h3 id="描述法"><a href="#描述法" class="headerlink" title="描述法"></a>描述法</h3><p>$$<br>{x|p(x)}<br>\<br>{x\in\mathbb{R}|x&gt;1}<br>\<br>{(x,y)|y=x}<br>$$</p>
-<h4 id="例题-2"><a href="#例题-2" class="headerlink" title="例题 2"></a>例题 2</h4><blockquote>
-<p>列举 $E={x\in\mathbb{Z}|x^2-3x-1\le0}$</p>
-</blockquote>
-<p>当 $x^2-3x-1=0$ 时，<br>$$<br>x=\dfrac{3\pm\sqrt{13}}{2}<br>$$<br>结合抛物线 $y=x^2-3x-1$ 的图像可得 $E={0,1,2,3}$</p>
-<h4 id="例题-3"><a href="#例题-3" class="headerlink" title="例题 3"></a>例题 3</h4><blockquote>
-<p>已知集合 $M={x|(x-a)(x^2-ax+a-1)=0}$ 各元素之和为 $3$ ，求 $a$</p>
-</blockquote>
-<p>考虑特征性质<br>$$<br>(x-a)(x^2-ax+a-1)=(x-a)(x-a+1)(x-1)=0<br>$$<br>则<br>$$<br>x_1=a,x_2=a-1,x_3=1<br>$$<br>解得 $a=\frac32$</p>
-<p>若 $a=1$ ，则和为 $1$ ；</p>
-<p>若 $a-1=1$ 即 $a=2$ ，则和为 $3$</p>
-<p>综上， $a=\frac32$ 或 $a=2$</p>
-<h3 id="区间表示法"><a href="#区间表示法" class="headerlink" title="区间表示法"></a>区间表示法</h3><p>略</p>
-<h3 id="图示法（韦恩图）"><a href="#图示法（韦恩图）" class="headerlink" title="图示法（韦恩图）"></a>图示法（韦恩图）</h3><p>略</p>
-<h2 id="集合与集合的关系"><a href="#集合与集合的关系" class="headerlink" title="集合与集合的关系"></a>集合与集合的关系</h2><p>$$<br>{1,2}\sube{1,2,3}<br>\<br>{1,2}\text{包含于}{1,2,3}<br>\<br>{1,2,3}\supe{1,2}<br>\<br>{1,2,3}\text{包含}{1,2}<br>$$</p>
-<p>$$<br>\varnothing\sube A<br>$$</p>
-<ul>
-<li>真子集 $\subsetneq$</li>
-<li>相等</li>
-</ul>
-<h4 id="例题-4"><a href="#例题-4" class="headerlink" title="例题 4"></a>例题 4</h4><blockquote>
-<p>$X={x|x=4n+1,n\in\mathbb Z},Y={x|x=2n+1,n\in\mathbb Z},L={x|x=4n+1\text或x=4n-1,n\in\mathbb Z}$</p>
-</blockquote>
-<table>
-<thead>
-<tr>
-<th>A. $X\subsetneq Y\subsetneq L$</th>
-<th>B. $X\subsetneq Y=L$</th>
-<th>C. $Y\subsetneq X\subsetneq L$</th>
-<th>D. $X\subsetneq L\subsetneq Y$</th>
-</tr>
-</thead>
-</table>
-<p>B，略</p>
-<h2 id="集合的运算"><a href="#集合的运算" class="headerlink" title="集合的运算"></a>集合的运算</h2><p>$$<br>A\cap B={x|x\in A\text且x\in B}<br>$$</p>
-<p>$$<br>A\cup B={x|x\in A\text或x\in B}<br>$$</p>
-<p>$$<br>A\cap\complement_UA=\varnothing<br>$$</p>
-<h3 id="cap-的性质"><a href="#cap-的性质" class="headerlink" title="$\cap$ 的性质"></a>$\cap$ 的性质</h3><ul>
-<li>$A\cap B=B\cap A$</li>
-<li>$A\cap B\sube A,A\cap B\sube B$</li>
-</ul>
-<h3 id="cup-的性质"><a href="#cup-的性质" class="headerlink" title="$\cup$ 的性质"></a>$\cup$ 的性质</h3><ul>
-<li>$A\cup B=B\cup A$</li>
-<li>$A\cup B\supe A,A\cup B\supe B$</li>
-</ul>
-<h3 id="complement-的性质"><a href="#complement-的性质" class="headerlink" title="$\complement$ 的性质"></a>$\complement$ 的性质</h3><ul>
-<li>$A\cap\complement_UA=\varnothing$</li>
-<li>$A\cup\complement_UA=U$</li>
-<li>$A\sube B\lrarr\complement_UA\supe\complement_UB$</li>
-</ul>
-<h1 id="常用逻辑用语"><a href="#常用逻辑用语" class="headerlink" title="常用逻辑用语"></a>常用逻辑用语</h1><h2 id="命题"><a href="#命题" class="headerlink" title="命题"></a>命题</h2><h3 id="否定"><a href="#否定" class="headerlink" title="否定"></a>否定</h3><p>$p$ 的否定 $\lnot p$</p>
-<h2 id="量词"><a href="#量词" class="headerlink" title="量词"></a>量词</h2><h3 id="全称量词"><a href="#全称量词" class="headerlink" title="全称量词"></a>全称量词</h3><p>$$<br>\forall x\in M,p(x)<br>$$</p>
-<h3 id="存在量词"><a href="#存在量词" class="headerlink" title="存在量词"></a>存在量词</h3><p>$$<br>\exist x\in M,p(x)$<br>$$</p>
-<h3 id="否定-1"><a href="#否定-1" class="headerlink" title="否定"></a>否定</h3><h4 id="例题-5"><a href="#例题-5" class="headerlink" title="例题 5"></a>例题 5</h4><blockquote>
-<p>$p$：“我们班所有人都喜欢学习”，求 $\lnot p$</p>
-</blockquote>
-<p>$\lnot p$：“我们班有些人不喜欢学习”</p>
-<blockquote>
-<p>$p$：“我们班有些人喜欢学习”，求 $\lnot p$</p>
-</blockquote>
-<p>$\lnot p$：“我们班所有人都不喜欢学习”</p>
-<ul>
-<li>$p:\forall x\in A,p(x)\rarr\lnot p:\exist x\in A,\lnot p(x)$</li>
-<li>$p:\exist x\in A,p(x)\rarr\lnot p:\forall x\in A,\lnot p(x)$</li>
-</ul>
-]]></content>
-      <tags>
-        <tag>笔记</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>题解P1577【切绳子】</title>
     <url>/2019/08/15/%E9%A2%98%E8%A7%A3P1577%E3%80%90%E5%88%87%E7%BB%B3%E5%AD%90%E3%80%91/</url>
     <content><![CDATA[<p>先解释一下题意。</p>
@@ -393,6 +381,18 @@
 <p>几乎所有的情况下二分法都比暴搜快上指数倍，并且具有非常稳定的猜测次数。有些情况下会出现二分法的进化——三分甚至多分。不过用武之地实在有限，一般情况下二分都可以满足要求，而且模板非常小，只有几行。</p>
 <p>上代码：</p>
 <figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> NR = <span class="number">1e4</span>;</span><br><span class="line"><span class="keyword">int</span> n,k,a[NR],l,r = <span class="number">1e8</span>,m,cnt;</span><br><span class="line"><span class="keyword">double</span> tmp;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">check</span><span class="params">(<span class="keyword">int</span> x)</span></span>&#123;<span class="comment">//检查答案x是否达到或超过要求的函数</span></span><br><span class="line">	<span class="keyword">int</span> cnt = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>;i &lt; n;i++)</span><br><span class="line">		cnt += a[i] / x;</span><br><span class="line">	<span class="keyword">return</span> cnt &gt;= k;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	cin&gt;&gt;n&gt;&gt;k;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>;i &lt; n;i++)&#123;</span><br><span class="line">		cin&gt;&gt;tmp;</span><br><span class="line">		a[i] = tmp * <span class="number">100</span>;<span class="comment">//用int存，方便处理以及利用整数除法</span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">while</span>(l &lt;= r)&#123;<span class="comment">//二分</span></span><br><span class="line">		m = (l + r) / <span class="number">2</span>;<span class="comment">//m取中间数</span></span><br><span class="line">		<span class="keyword">if</span>(!m)</span><br><span class="line">			<span class="keyword">break</span>;<span class="comment">//特判m == 0的情况，没有它第九个点会RE</span></span><br><span class="line">		<span class="keyword">if</span>(<span class="built_in">check</span>(m))</span><br><span class="line">			l = m + <span class="number">1</span>,cnt = m;<span class="comment">//符合要求，缩小范围并更新答案</span></span><br><span class="line">		<span class="keyword">else</span></span><br><span class="line">			r = m - <span class="number">1</span>;<span class="comment">//不符合要求，缩小范围</span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;%.2f&quot;</span>,cnt / <span class="number">100.</span>);<span class="comment">//输出时记得转化成小数，一定不要忘了是100.不是100，否则使用的就是整数除法了</span></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <tags>
+        <tag>题解</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>题解 P1569 【[USACO11FEB]属牛的抗议Generic Cow Prote…】</title>
+    <url>/2019/10/05/%E9%A2%98%E8%A7%A3P1569%E3%80%90-USACO11FEB-%E5%B1%9E%E7%89%9B%E7%9A%84%E6%8A%97%E8%AE%AEGeneric-Cow-Prote%E2%80%A6%E3%80%91/</url>
+    <content><![CDATA[<p>典型的一维 DP。</p>
+<p>既然是连续的，那么 $sum_i$ 表示前 $i$ 个数的和，$dp_i$ 表示前 $i$ 个数的答案，也就是前 $i$ 头奶牛最多分成 $dp_i$ 组。</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> OvO cout&lt;&lt;<span class="meta-string">&quot;OvO&quot;</span>;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> NR = <span class="number">1e3</span> + <span class="number">10</span>;</span><br><span class="line"><span class="keyword">int</span> n,dp[NR],sum[NR];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">memset</span>(dp,<span class="number">-999999</span>,<span class="built_in"><span class="keyword">sizeof</span></span>(dp));<span class="comment">//预设成最小，这里-999999（我也忘了是bit还是Byte了）大概就接近int最小值</span></span><br><span class="line">	cin&gt;&gt;n;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>;i &lt;= n;++i)&#123;</span><br><span class="line">		cin&gt;&gt;sum[i];</span><br><span class="line">		sum[i] += sum[i - <span class="number">1</span>];<span class="comment">//这里要记录的是前i个数的和</span></span><br><span class="line">	&#125;</span><br><span class="line">	dp[<span class="number">0</span>] = <span class="number">0</span>;<span class="comment">//第一个元素设为0，方便下面的j = 0处理</span></span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>;i &lt;= n;++i)&#123;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span>;j &lt; i;++j)</span><br><span class="line">			<span class="keyword">if</span>(sum[i] - sum[j] &gt;= <span class="number">0</span>)<span class="comment">//如果这一段的理智度可以接受</span></span><br><span class="line">				dp[i] = <span class="built_in">max</span>(dp[j] + <span class="number">1</span>,dp[i]);<span class="comment">//判断大小，决定状态</span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span>(dp[n] &lt; <span class="number">-1e9</span>)</span><br><span class="line">		cout&lt;&lt;<span class="string">&quot;Impossible&quot;</span>;<span class="comment">//没有算出结果，也就是没有状态变动，无解</span></span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">		cout&lt;&lt;dp[n];<span class="comment">//有解，输出答案</span></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    OvO</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 ]]></content>
       <tags>
