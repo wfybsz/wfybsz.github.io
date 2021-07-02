@@ -168,6 +168,57 @@
 <p>综上， $a=\frac32$ 或 $a=2$</p>
 <h3 id="区间表示法"><a href="#区间表示法" class="headerlink" title="区间表示法"></a>区间表示法</h3><p>略</p>
 <h3 id="图示法（韦恩图）"><a href="#图示法（韦恩图）" class="headerlink" title="图示法（韦恩图）"></a>图示法（韦恩图）</h3><p>略</p>
+<h2 id="集合与集合的关系"><a href="#集合与集合的关系" class="headerlink" title="集合与集合的关系"></a>集合与集合的关系</h2><p>$$<br>{1,2}\sube{1,2,3}<br>\<br>{1,2}\text{包含于}{1,2,3}<br>\<br>{1,2,3}\supe{1,2}<br>\<br>{1,2,3}\text{包含}{1,2}<br>$$</p>
+<p>$$<br>\varnothing\sube A<br>$$</p>
+<ul>
+<li>真子集 $\subsetneq$</li>
+<li>相等</li>
+</ul>
+<h4 id="例题-4"><a href="#例题-4" class="headerlink" title="例题 4"></a>例题 4</h4><blockquote>
+<p>$X={x|x=4n+1,n\in\mathbb Z},Y={x|x=2n+1,n\in\mathbb Z},L={x|x=4n+1\text或x=4n-1,n\in\mathbb Z}$</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>A. $X\subsetneq Y\subsetneq L$</th>
+<th>B. $X\subsetneq Y=L$</th>
+<th>C. $Y\subsetneq X\subsetneq L$</th>
+<th>D. $X\subsetneq L\subsetneq Y$</th>
+</tr>
+</thead>
+</table>
+<p>B，略</p>
+<h2 id="集合的运算"><a href="#集合的运算" class="headerlink" title="集合的运算"></a>集合的运算</h2><p>$$<br>A\cap B={x|x\in A\text且x\in B}<br>$$</p>
+<p>$$<br>A\cup B={x|x\in A\text或x\in B}<br>$$</p>
+<p>$$<br>A\cap\complement_UA=\varnothing<br>$$</p>
+<h3 id="cap-的性质"><a href="#cap-的性质" class="headerlink" title="$\cap$ 的性质"></a>$\cap$ 的性质</h3><ul>
+<li>$A\cap B=B\cap A$</li>
+<li>$A\cap B\sube A,A\cap B\sube B$</li>
+</ul>
+<h3 id="cup-的性质"><a href="#cup-的性质" class="headerlink" title="$\cup$ 的性质"></a>$\cup$ 的性质</h3><ul>
+<li>$A\cup B=B\cup A$</li>
+<li>$A\cup B\supe A,A\cup B\supe B$</li>
+</ul>
+<h3 id="complement-的性质"><a href="#complement-的性质" class="headerlink" title="$\complement$ 的性质"></a>$\complement$ 的性质</h3><ul>
+<li>$A\cap\complement_UA=\varnothing$</li>
+<li>$A\cup\complement_UA=U$</li>
+<li>$A\sube B\lrarr\complement_UA\supe\complement_UB$</li>
+</ul>
+<h1 id="常用逻辑用语"><a href="#常用逻辑用语" class="headerlink" title="常用逻辑用语"></a>常用逻辑用语</h1><h2 id="命题"><a href="#命题" class="headerlink" title="命题"></a>命题</h2><h3 id="否定"><a href="#否定" class="headerlink" title="否定"></a>否定</h3><p>$p$ 的否定 $\lnot p$</p>
+<h2 id="量词"><a href="#量词" class="headerlink" title="量词"></a>量词</h2><h3 id="全称量词"><a href="#全称量词" class="headerlink" title="全称量词"></a>全称量词</h3><p>$$<br>\forall x\in M,p(x)<br>$$</p>
+<h3 id="存在量词"><a href="#存在量词" class="headerlink" title="存在量词"></a>存在量词</h3><p>$$<br>\exist x\in M,p(x)$<br>$$</p>
+<h3 id="否定-1"><a href="#否定-1" class="headerlink" title="否定"></a>否定</h3><h4 id="例题-5"><a href="#例题-5" class="headerlink" title="例题 5"></a>例题 5</h4><blockquote>
+<p>$p$：“我们班所有人都喜欢学习”，求 $\lnot p$</p>
+</blockquote>
+<p>$\lnot p$：“我们班有些人不喜欢学习”</p>
+<blockquote>
+<p>$p$：“我们班有些人喜欢学习”，求 $\lnot p$</p>
+</blockquote>
+<p>$\lnot p$：“我们班所有人都不喜欢学习”</p>
+<ul>
+<li>$p:\forall x\in A,p(x)\rarr\lnot p:\exist x\in A,\lnot p(x)$</li>
+<li>$p:\exist x\in A,p(x)\rarr\lnot p:\forall x\in A,\lnot p(x)$</li>
+</ul>
 ]]></content>
       <tags>
         <tag>笔记</tag>
@@ -316,6 +367,18 @@
       </tags>
   </entry>
   <entry>
+    <title>题解 P1569 【[USACO11FEB]属牛的抗议Generic Cow Prote…】</title>
+    <url>/2019/10/05/%E9%A2%98%E8%A7%A3P1569%E3%80%90-USACO11FEB-%E5%B1%9E%E7%89%9B%E7%9A%84%E6%8A%97%E8%AE%AEGeneric-Cow-Prote%E2%80%A6%E3%80%91/</url>
+    <content><![CDATA[<p>典型的一维 DP。</p>
+<p>既然是连续的，那么 $sum_i$ 表示前 $i$ 个数的和，$dp_i$ 表示前 $i$ 个数的答案，也就是前 $i$ 头奶牛最多分成 $dp_i$ 组。</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> OvO cout&lt;&lt;<span class="meta-string">&quot;OvO&quot;</span>;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> NR = <span class="number">1e3</span> + <span class="number">10</span>;</span><br><span class="line"><span class="keyword">int</span> n,dp[NR],sum[NR];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">memset</span>(dp,<span class="number">-999999</span>,<span class="built_in"><span class="keyword">sizeof</span></span>(dp));<span class="comment">//预设成最小，这里-999999（我也忘了是bit还是Byte了）大概就接近int最小值</span></span><br><span class="line">	cin&gt;&gt;n;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>;i &lt;= n;++i)&#123;</span><br><span class="line">		cin&gt;&gt;sum[i];</span><br><span class="line">		sum[i] += sum[i - <span class="number">1</span>];<span class="comment">//这里要记录的是前i个数的和</span></span><br><span class="line">	&#125;</span><br><span class="line">	dp[<span class="number">0</span>] = <span class="number">0</span>;<span class="comment">//第一个元素设为0，方便下面的j = 0处理</span></span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>;i &lt;= n;++i)&#123;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span>;j &lt; i;++j)</span><br><span class="line">			<span class="keyword">if</span>(sum[i] - sum[j] &gt;= <span class="number">0</span>)<span class="comment">//如果这一段的理智度可以接受</span></span><br><span class="line">				dp[i] = <span class="built_in">max</span>(dp[j] + <span class="number">1</span>,dp[i]);<span class="comment">//判断大小，决定状态</span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span>(dp[n] &lt; <span class="number">-1e9</span>)</span><br><span class="line">		cout&lt;&lt;<span class="string">&quot;Impossible&quot;</span>;<span class="comment">//没有算出结果，也就是没有状态变动，无解</span></span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">		cout&lt;&lt;dp[n];<span class="comment">//有解，输出答案</span></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    OvO</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <tags>
+        <tag>题解</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>题解P1577【切绳子】</title>
     <url>/2019/08/15/%E9%A2%98%E8%A7%A3P1577%E3%80%90%E5%88%87%E7%BB%B3%E5%AD%90%E3%80%91/</url>
     <content><![CDATA[<p>先解释一下题意。</p>
@@ -330,18 +393,6 @@
 <p>几乎所有的情况下二分法都比暴搜快上指数倍，并且具有非常稳定的猜测次数。有些情况下会出现二分法的进化——三分甚至多分。不过用武之地实在有限，一般情况下二分都可以满足要求，而且模板非常小，只有几行。</p>
 <p>上代码：</p>
 <figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> NR = <span class="number">1e4</span>;</span><br><span class="line"><span class="keyword">int</span> n,k,a[NR],l,r = <span class="number">1e8</span>,m,cnt;</span><br><span class="line"><span class="keyword">double</span> tmp;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">check</span><span class="params">(<span class="keyword">int</span> x)</span></span>&#123;<span class="comment">//检查答案x是否达到或超过要求的函数</span></span><br><span class="line">	<span class="keyword">int</span> cnt = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>;i &lt; n;i++)</span><br><span class="line">		cnt += a[i] / x;</span><br><span class="line">	<span class="keyword">return</span> cnt &gt;= k;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	cin&gt;&gt;n&gt;&gt;k;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>;i &lt; n;i++)&#123;</span><br><span class="line">		cin&gt;&gt;tmp;</span><br><span class="line">		a[i] = tmp * <span class="number">100</span>;<span class="comment">//用int存，方便处理以及利用整数除法</span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">while</span>(l &lt;= r)&#123;<span class="comment">//二分</span></span><br><span class="line">		m = (l + r) / <span class="number">2</span>;<span class="comment">//m取中间数</span></span><br><span class="line">		<span class="keyword">if</span>(!m)</span><br><span class="line">			<span class="keyword">break</span>;<span class="comment">//特判m == 0的情况，没有它第九个点会RE</span></span><br><span class="line">		<span class="keyword">if</span>(<span class="built_in">check</span>(m))</span><br><span class="line">			l = m + <span class="number">1</span>,cnt = m;<span class="comment">//符合要求，缩小范围并更新答案</span></span><br><span class="line">		<span class="keyword">else</span></span><br><span class="line">			r = m - <span class="number">1</span>;<span class="comment">//不符合要求，缩小范围</span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;%.2f&quot;</span>,cnt / <span class="number">100.</span>);<span class="comment">//输出时记得转化成小数，一定不要忘了是100.不是100，否则使用的就是整数除法了</span></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <tags>
-        <tag>题解</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>题解 P1569 【[USACO11FEB]属牛的抗议Generic Cow Prote…】</title>
-    <url>/2019/10/05/%E9%A2%98%E8%A7%A3P1569%E3%80%90-USACO11FEB-%E5%B1%9E%E7%89%9B%E7%9A%84%E6%8A%97%E8%AE%AEGeneric-Cow-Prote%E2%80%A6%E3%80%91/</url>
-    <content><![CDATA[<p>典型的一维 DP。</p>
-<p>既然是连续的，那么 $sum_i$ 表示前 $i$ 个数的和，$dp_i$ 表示前 $i$ 个数的答案，也就是前 $i$ 头奶牛最多分成 $dp_i$ 组。</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> OvO cout&lt;&lt;<span class="meta-string">&quot;OvO&quot;</span>;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> NR = <span class="number">1e3</span> + <span class="number">10</span>;</span><br><span class="line"><span class="keyword">int</span> n,dp[NR],sum[NR];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">memset</span>(dp,<span class="number">-999999</span>,<span class="built_in"><span class="keyword">sizeof</span></span>(dp));<span class="comment">//预设成最小，这里-999999（我也忘了是bit还是Byte了）大概就接近int最小值</span></span><br><span class="line">	cin&gt;&gt;n;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>;i &lt;= n;++i)&#123;</span><br><span class="line">		cin&gt;&gt;sum[i];</span><br><span class="line">		sum[i] += sum[i - <span class="number">1</span>];<span class="comment">//这里要记录的是前i个数的和</span></span><br><span class="line">	&#125;</span><br><span class="line">	dp[<span class="number">0</span>] = <span class="number">0</span>;<span class="comment">//第一个元素设为0，方便下面的j = 0处理</span></span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>;i &lt;= n;++i)&#123;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span>;j &lt; i;++j)</span><br><span class="line">			<span class="keyword">if</span>(sum[i] - sum[j] &gt;= <span class="number">0</span>)<span class="comment">//如果这一段的理智度可以接受</span></span><br><span class="line">				dp[i] = <span class="built_in">max</span>(dp[j] + <span class="number">1</span>,dp[i]);<span class="comment">//判断大小，决定状态</span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span>(dp[n] &lt; <span class="number">-1e9</span>)</span><br><span class="line">		cout&lt;&lt;<span class="string">&quot;Impossible&quot;</span>;<span class="comment">//没有算出结果，也就是没有状态变动，无解</span></span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">		cout&lt;&lt;dp[n];<span class="comment">//有解，输出答案</span></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    OvO</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 ]]></content>
       <tags>
