@@ -168,8 +168,8 @@
 <p>综上， $a=\frac32$ 或 $a=2$</p>
 <h3 id="区间表示法"><a href="#区间表示法" class="headerlink" title="区间表示法"></a>区间表示法</h3><p>略</p>
 <h3 id="图示法（韦恩图）"><a href="#图示法（韦恩图）" class="headerlink" title="图示法（韦恩图）"></a>图示法（韦恩图）</h3><p>略</p>
-<h2 id="集合与集合的关系"><a href="#集合与集合的关系" class="headerlink" title="集合与集合的关系"></a>集合与集合的关系</h2><p>$$<br>{1,2}\sube{1,2,3}<br>\<br>{1,2}\text{包含于}{1,2,3}<br>\<br>{1,2,3}\supe{1,2}<br>\<br>{1,2,3}\text{包含}{1,2}<br>$$</p>
-<p>$$<br>\varnothing\sube A<br>$$</p>
+<h2 id="集合与集合的关系"><a href="#集合与集合的关系" class="headerlink" title="集合与集合的关系"></a>集合与集合的关系</h2><p>$$<br>{1,2}\subseteq{1,2,3}<br>\<br>{1,2}\text{包含于}{1,2,3}<br>\<br>{1,2,3}\supseteq{1,2}<br>\<br>{1,2,3}\text{包含}{1,2}<br>$$</p>
+<p>$$<br>\varnothing\subseteq A<br>$$</p>
 <ul>
 <li>真子集 $\subsetneq$</li>
 <li>相等</li>
@@ -193,20 +193,20 @@
 <p>$$<br>A\cap\complement_UA=\varnothing<br>$$</p>
 <h3 id="cap-的性质"><a href="#cap-的性质" class="headerlink" title="$\cap$ 的性质"></a>$\cap$ 的性质</h3><ul>
 <li>$A\cap B=B\cap A$</li>
-<li>$A\cap B\sube A,A\cap B\sube B$</li>
+<li>$A\cap B\subseteq A,A\cap B\subseteq B$</li>
 </ul>
 <h3 id="cup-的性质"><a href="#cup-的性质" class="headerlink" title="$\cup$ 的性质"></a>$\cup$ 的性质</h3><ul>
 <li>$A\cup B=B\cup A$</li>
-<li>$A\cup B\supe A,A\cup B\supe B$</li>
+<li>$A\cup B\supseteq A,A\cup B\supseteq B$</li>
 </ul>
 <h3 id="complement-的性质"><a href="#complement-的性质" class="headerlink" title="$\complement$ 的性质"></a>$\complement$ 的性质</h3><ul>
 <li>$A\cap\complement_UA=\varnothing$</li>
 <li>$A\cup\complement_UA=U$</li>
-<li>$A\sube B\lrarr\complement_UA\supe\complement_UB$</li>
+<li>$A\subseteq B\leftrightarrow\complement_UA\supseteq\complement_UB$</li>
 </ul>
 <h1 id="常用逻辑用语"><a href="#常用逻辑用语" class="headerlink" title="常用逻辑用语"></a>常用逻辑用语</h1><h2 id="命题"><a href="#命题" class="headerlink" title="命题"></a>命题</h2><h3 id="否定"><a href="#否定" class="headerlink" title="否定"></a>否定</h3><p>$p$ 的否定 $\lnot p$</p>
 <h2 id="量词"><a href="#量词" class="headerlink" title="量词"></a>量词</h2><h3 id="全称量词"><a href="#全称量词" class="headerlink" title="全称量词"></a>全称量词</h3><p>$$<br>\forall x\in M,p(x)<br>$$</p>
-<h3 id="存在量词"><a href="#存在量词" class="headerlink" title="存在量词"></a>存在量词</h3><p>$$<br>\exist x\in M,p(x)$<br>$$</p>
+<h3 id="存在量词"><a href="#存在量词" class="headerlink" title="存在量词"></a>存在量词</h3><p>$$<br>\exists x\in M,p(x)$<br>$$</p>
 <h3 id="否定-1"><a href="#否定-1" class="headerlink" title="否定"></a>否定</h3><h4 id="例题-5"><a href="#例题-5" class="headerlink" title="例题 5"></a>例题 5</h4><blockquote>
 <p>$p$：“我们班所有人都喜欢学习”，求 $\lnot p$</p>
 </blockquote>
@@ -216,8 +216,8 @@
 </blockquote>
 <p>$\lnot p$：“我们班所有人都不喜欢学习”</p>
 <ul>
-<li>$p:\forall x\in A,p(x)\rarr\lnot p:\exist x\in A,\lnot p(x)$</li>
-<li>$p:\exist x\in A,p(x)\rarr\lnot p:\forall x\in A,\lnot p(x)$</li>
+<li>$p:\forall x\in A,p(x)\rightarrow\lnot p:\exists x\in A,\lnot p(x)$</li>
+<li>$p:\exists x\in A,p(x)\rightarrow\lnot p:\forall x\in A,\lnot p(x)$</li>
 </ul>
 ]]></content>
       <tags>
