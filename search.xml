@@ -11,6 +11,72 @@
       </tags>
   </entry>
   <entry>
+    <title>大事祭</title>
+    <url>/2019/08/15/%E5%A4%A7%E4%BA%8B%E7%A5%AD/</url>
+    <content><![CDATA[<p><code>2018-08-17 09:38</code> 小小牛</p>
+<p><code>2018-09-09 09:14</code> 小小犇</p>
+<p><code>2018-09-13 22:13</code> 小牛</p>
+<p><code>2018-10-05 13:39</code> 小犇</p>
+<p><code>2018-10-13 12:02</code> 中牛</p>
+<p><code>2019-01-06 08:24</code> 中犇</p>
+<p><code>2019-03-18 21:53</code> 大牛</p>
+<p><code>2019-05-11 23:15</code> AC100</p>
+<p><code>2019-06-16 00:58</code> 大犇</p>
+<p><code>2019-08-15 00:00</code> 绿名（15号凌晨）</p>
+<p><code>2019-08-20 11:00</code> 改名<code>OvO自动机</code></p>
+<p><code>2019-09-12 00:00</code> 蓝名QAQ</p>
+<p><code>2019-10-11 05:00</code> 打卡 200 天</p>
+<p><code>2020-02-10 00:00</code> 打卡 300 天</p>
+<p><code>2020-02-13 00:00</code> 再次绿名</p>
+<p><code>2020-04-06 00:00</code> 掉蓝……要开始多刷题了</p>
+<p><code>2020-04-13 00:00</code> 成功上绿</p>
+<p><code>2020-04-21 15:49</code> 提交 500</p>
+<p><code>2020-04-22 15:42</code> AC200</p>
+<p><code>2020-07-21 00:00</code> AFO</p>
+]]></content>
+      <tags>
+        <tag>个人</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>快速打开指定bv或av号的b站视频</title>
+    <url>/2020/02/23/%E5%BF%AB%E9%80%9F%E6%89%93%E5%BC%80%E6%8C%87%E5%AE%9Aav%E5%8F%B7%E7%9A%84b%E7%AB%99%E8%A7%86%E9%A2%91/</url>
+    <content><![CDATA[<p>最近跟朋友互相分享视频总是用 av 号，打开浏览器再输入号码特别麻烦，于是花了点时间搞了个快速打开视频的方法。</p>
+<hr>
+<p>首先建一个空的文件夹，把位置复制下来。</p>
+<p>回桌面选中 <strong>此电脑</strong> 按下 <code>Alt</code> + <code>Enter</code> 打开属性界面。</p>
+<p>点击左边的 <strong>高级系统设置</strong>，出现的小窗口点右下角的 <strong>环境变量</strong>，又出现的小窗口中下面那一栏 <strong>系统变量</strong> 里找到 <code>Path</code> 双击，又一次弹出窗口。Win7 系统直接在那一长条文本的开头粘贴刚才空文件夹的位置，然后加一个 <code>;</code> （注意是英文分号）与后面的文本分隔开；Win10 系统点击右侧新建然后粘贴，<code>Enter</code>。所有窗口点 <strong>确定</strong> 来关掉它，然后把刚开始打开的系统属性也关掉。</p>
+<hr>
+<p>这里我介绍两种版本。</p>
+<span id="more"></span>
+
+<h3 id="需要输入-av-号"><a href="#需要输入-av-号" class="headerlink" title="需要输入 av 号"></a>需要输入 av 号</h3><p>在之前建好的空文件夹里新建一个名为 <code>av.bat</code> 的文件，右键它选 <strong>编辑</strong>，在弹出来的空记事本里粘贴这段：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="string">&quot;C:\Program Files\Mozilla Firefox\firefox.exe&quot;</span> https://www.bilibili.com/video/av%1</span><br></pre></td></tr></table></figure>
+
+<p>注意将引号里的内容变成你自己浏览器的位置。</p>
+<p>比如要看 Lex 的一月新番导视。</p>
+<p>按下 <code>Windows</code> + <code>R</code>，在出现的小窗口里填上 <code>av 79903305</code>，<code>Enter</code>，浏览器自动启动并打开了 Lex 的视频。</p>
+<h3 id="需要复制av号"><a href="#需要复制av号" class="headerlink" title="需要复制av号"></a>需要复制av号</h3><p>原理是获取剪贴板内容到变量再给浏览器。</p>
+<p>在之前建好的空文件夹里新建一个名为 <code>clp.bat</code> 的文件（别的名字也行），右键它选 <strong>编辑</strong>，在弹出来的空记事本里粘贴这段：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">@<span class="built_in">echo</span> off</span><br><span class="line">setlocal enabledelayedexpansion</span><br><span class="line"><span class="built_in">set</span> ms=mshta vbscript:CreateObject(<span class="string">&quot;Scripting.FileSystemObject&quot;</span>).GetStandardStream(1).Write(clipboardData.getData(<span class="string">&quot;text&quot;</span>))(close)</span><br><span class="line"><span class="keyword">for</span> /f <span class="string">&quot;delims=&quot;</span> %%i <span class="keyword">in</span> (<span class="string">&#x27;!ms!&#x27;</span>) <span class="keyword">do</span> (</span><br><span class="line"><span class="built_in">set</span> a=%%i</span><br><span class="line"><span class="string">&quot;C:\Program Files\Mozilla Firefox\firefox.exe&quot;</span> https:\\www.bilibili.com\video\!a!</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+
+<p>注意将第 6 行引号里的内容变成你自己浏览器的位置。</p>
+<p>比如要看 Lex 的一月新番导视。</p>
+<p>复制 <code>av79903305</code>，按下 <code>Windows</code> + <code>R</code>，输入 <code>clp</code>（或者你自己写的文件名），<code>Enter</code>，浏览器自动启动并打开了 Lex 的视频。</p>
+<p>这个版本相较第一个版本的优点在于可以直接双击这个文件来打开，或者创建一个指向这个文件的快捷方式，甚至放到任务栏上也可以快捷打开。</p>
+<hr>
+<p>Upd 2020-03-23</p>
+<p>今天我刷 b 站的时候看到链接变成 <code>BV</code> 开头的了……然后我看到了<a href="https://www.bilibili.com/read/cv5167957">这个</a>。</p>
+<p>我 tm 刚写了一个月的东西就这么注定逐渐荒废掉了？？？</p>
+<p>还好之前的还能用。</p>
+<p>而且我的更新压力很小啊嘿嘿嘿</p>
+<h3 id="更新——快速打开指定-BV-号视频"><a href="#更新——快速打开指定-BV-号视频" class="headerlink" title="更新——快速打开指定 BV 号视频"></a>更新——快速打开指定 BV 号视频</h3><p><code>BV.bat</code></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="string">&quot;C:\Program Files\Mozilla Firefox\firefox.exe&quot;</span> https://www.bilibili.com/video/BV%1</span><br></pre></td></tr></table></figure>]]></content>
+      <tags>
+        <tag>分享</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>抗疫时代生活杂谈</title>
     <url>/2020/05/31/%E6%8A%97%E7%96%AB%E6%97%B6%E4%BB%A3%E7%94%9F%E6%B4%BB%E6%9D%82%E8%B0%88/</url>
     <content><![CDATA[<p>一月底突然就得知了疫情爆发的消息，也不清楚是什么病毒，但是知道必须待在家里，像个小孩一样懵懂。寒假期间当然对生活没有什么影响，不过这个时间倒是比较及时——本来计划没过多久就要去日本的，要是晚了几周我们全家就被困在东京了，想想那个人口密度和日本现在极不乐观的状况也是很后怕。其它的就没有什么特别问题了，依然终日与寒假作业为伴。</p>
@@ -159,89 +225,6 @@
       </tags>
   </entry>
   <entry>
-    <title>大事祭</title>
-    <url>/2019/08/15/%E5%A4%A7%E4%BA%8B%E7%A5%AD/</url>
-    <content><![CDATA[<p><code>2018-08-17 09:38</code> 小小牛</p>
-<p><code>2018-09-09 09:14</code> 小小犇</p>
-<p><code>2018-09-13 22:13</code> 小牛</p>
-<p><code>2018-10-05 13:39</code> 小犇</p>
-<p><code>2018-10-13 12:02</code> 中牛</p>
-<p><code>2019-01-06 08:24</code> 中犇</p>
-<p><code>2019-03-18 21:53</code> 大牛</p>
-<p><code>2019-05-11 23:15</code> AC100</p>
-<p><code>2019-06-16 00:58</code> 大犇</p>
-<p><code>2019-08-15 00:00</code> 绿名（15号凌晨）</p>
-<p><code>2019-08-20 11:00</code> 改名<code>OvO自动机</code></p>
-<p><code>2019-09-12 00:00</code> 蓝名QAQ</p>
-<p><code>2019-10-11 05:00</code> 打卡 200 天</p>
-<p><code>2020-02-10 00:00</code> 打卡 300 天</p>
-<p><code>2020-02-13 00:00</code> 再次绿名</p>
-<p><code>2020-04-06 00:00</code> 掉蓝……要开始多刷题了</p>
-<p><code>2020-04-13 00:00</code> 成功上绿</p>
-<p><code>2020-04-21 15:49</code> 提交 500</p>
-<p><code>2020-04-22 15:42</code> AC200</p>
-<p><code>2020-07-21 00:00</code> AFO</p>
-]]></content>
-      <tags>
-        <tag>个人</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>快速打开指定bv或av号的b站视频</title>
-    <url>/2020/02/23/%E5%BF%AB%E9%80%9F%E6%89%93%E5%BC%80%E6%8C%87%E5%AE%9Aav%E5%8F%B7%E7%9A%84b%E7%AB%99%E8%A7%86%E9%A2%91/</url>
-    <content><![CDATA[<p>最近跟朋友互相分享视频总是用 av 号，打开浏览器再输入号码特别麻烦，于是花了点时间搞了个快速打开视频的方法。</p>
-<hr>
-<p>首先建一个空的文件夹，把位置复制下来。</p>
-<p>回桌面选中 <strong>此电脑</strong> 按下 <code>Alt</code> + <code>Enter</code> 打开属性界面。</p>
-<p>点击左边的 <strong>高级系统设置</strong>，出现的小窗口点右下角的 <strong>环境变量</strong>，又出现的小窗口中下面那一栏 <strong>系统变量</strong> 里找到 <code>Path</code> 双击，又一次弹出窗口。Win7 系统直接在那一长条文本的开头粘贴刚才空文件夹的位置，然后加一个 <code>;</code> （注意是英文分号）与后面的文本分隔开；Win10 系统点击右侧新建然后粘贴，<code>Enter</code>。所有窗口点 <strong>确定</strong> 来关掉它，然后把刚开始打开的系统属性也关掉。</p>
-<hr>
-<p>这里我介绍两种版本。</p>
-<span id="more"></span>
-
-<h3 id="需要输入-av-号"><a href="#需要输入-av-号" class="headerlink" title="需要输入 av 号"></a>需要输入 av 号</h3><p>在之前建好的空文件夹里新建一个名为 <code>av.bat</code> 的文件，右键它选 <strong>编辑</strong>，在弹出来的空记事本里粘贴这段：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="string">&quot;C:\Program Files\Mozilla Firefox\firefox.exe&quot;</span> https://www.bilibili.com/video/av%1</span><br></pre></td></tr></table></figure>
-
-<p>注意将引号里的内容变成你自己浏览器的位置。</p>
-<p>比如要看 Lex 的一月新番导视。</p>
-<p>按下 <code>Windows</code> + <code>R</code>，在出现的小窗口里填上 <code>av 79903305</code>，<code>Enter</code>，浏览器自动启动并打开了 Lex 的视频。</p>
-<h3 id="需要复制av号"><a href="#需要复制av号" class="headerlink" title="需要复制av号"></a>需要复制av号</h3><p>原理是获取剪贴板内容到变量再给浏览器。</p>
-<p>在之前建好的空文件夹里新建一个名为 <code>clp.bat</code> 的文件（别的名字也行），右键它选 <strong>编辑</strong>，在弹出来的空记事本里粘贴这段：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">@<span class="built_in">echo</span> off</span><br><span class="line">setlocal enabledelayedexpansion</span><br><span class="line"><span class="built_in">set</span> ms=mshta vbscript:CreateObject(<span class="string">&quot;Scripting.FileSystemObject&quot;</span>).GetStandardStream(1).Write(clipboardData.getData(<span class="string">&quot;text&quot;</span>))(close)</span><br><span class="line"><span class="keyword">for</span> /f <span class="string">&quot;delims=&quot;</span> %%i <span class="keyword">in</span> (<span class="string">&#x27;!ms!&#x27;</span>) <span class="keyword">do</span> (</span><br><span class="line"><span class="built_in">set</span> a=%%i</span><br><span class="line"><span class="string">&quot;C:\Program Files\Mozilla Firefox\firefox.exe&quot;</span> https:\\www.bilibili.com\video\!a!</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
-
-<p>注意将第 6 行引号里的内容变成你自己浏览器的位置。</p>
-<p>比如要看 Lex 的一月新番导视。</p>
-<p>复制 <code>av79903305</code>，按下 <code>Windows</code> + <code>R</code>，输入 <code>clp</code>（或者你自己写的文件名），<code>Enter</code>，浏览器自动启动并打开了 Lex 的视频。</p>
-<p>这个版本相较第一个版本的优点在于可以直接双击这个文件来打开，或者创建一个指向这个文件的快捷方式，甚至放到任务栏上也可以快捷打开。</p>
-<hr>
-<p>Upd 2020-03-23</p>
-<p>今天我刷 b 站的时候看到链接变成 <code>BV</code> 开头的了……然后我看到了<a href="https://www.bilibili.com/read/cv5167957">这个</a>。</p>
-<p>我 tm 刚写了一个月的东西就这么注定逐渐荒废掉了？？？</p>
-<p>还好之前的还能用。</p>
-<p>而且我的更新压力很小啊嘿嘿嘿</p>
-<h3 id="更新——快速打开指定-BV-号视频"><a href="#更新——快速打开指定-BV-号视频" class="headerlink" title="更新——快速打开指定 BV 号视频"></a>更新——快速打开指定 BV 号视频</h3><p><code>BV.bat</code></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="string">&quot;C:\Program Files\Mozilla Firefox\firefox.exe&quot;</span> https://www.bilibili.com/video/BV%1</span><br></pre></td></tr></table></figure>]]></content>
-      <tags>
-        <tag>分享</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>题解 UVA297 【四分树 Quadtrees】</title>
-    <url>/2020/05/01/%E9%A2%98%E8%A7%A3-UVA297-%E3%80%90%E5%9B%9B%E5%88%86%E6%A0%91-Quadtrees%E3%80%91/</url>
-    <content><![CDATA[<p>这种树是可以得知一个节点有没有儿子的，所以只需要先序遍历就可以直接还原这棵树。</p>
-<p>得出解法：边输入边动态建树，把两棵树合并，然后算像素数量。每一步都是用dfs，且都遵循“黑色染，白色空，灰色继续递归”的规则。</p>
-<p>建树：使用递归动态建树。对于每一层递归，都当做输入一个子树，利用指针和 <code>new</code> 的灵活性致使过程很方便。</p>
-<p>合并：黑色染，白色被染，灰色继续递归。</p>
-<p>计数：黑色返回面积，白色返回零，灰色继续递归成更小的子方块处理。</p>
-<span id="more"></span>
-
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">namespace</span> io&#123;<span class="comment">/* 快读太长 删掉 */</span>&#125;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> in io::read()</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> print io::write</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ri register int</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> OvO cout&lt;&lt;<span class="meta-string">&quot;OvO&quot;</span>;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> n;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">node</span>&#123;</span></span><br><span class="line">	<span class="keyword">char</span> c;</span><br><span class="line">	node *sp[<span class="number">4</span>];<span class="comment">// 使用指针实现树，有四个儿子</span></span><br><span class="line">	<span class="built_in">node</span>()&#123;</span><br><span class="line">        c = <span class="number">0</span>;</span><br><span class="line">        sp[<span class="number">0</span>] = sp[<span class="number">1</span>] = sp[<span class="number">2</span>] = sp[<span class="number">3</span>] = <span class="literal">NULL</span>;<span class="comment">// 初始化成空指针</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;*root,*root_;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">dfs</span><span class="params">(node*&amp;p)</span></span>&#123;<span class="comment">// 递归建树。引用指针，也就是一个指针类型在传参的时候引用，注意node&amp;*p是错的</span></span><br><span class="line">	p = <span class="keyword">new</span> node;<span class="comment">// 申请内存开一个子树准备输入</span></span><br><span class="line">	<span class="keyword">while</span>(!(p-&gt;c == <span class="string">&#x27;f&#x27;</span> <span class="keyword">or</span> p-&gt;c == <span class="string">&#x27;e&#x27;</span> <span class="keyword">or</span> p-&gt;c == <span class="string">&#x27;p&#x27;</span>))<span class="comment">// 吃掉空字符</span></span><br><span class="line">		p-&gt;c = <span class="built_in">getchar</span>();</span><br><span class="line">	<span class="built_in"><span class="keyword">switch</span></span>(p-&gt;c)&#123;</span><br><span class="line">		<span class="keyword">case</span> <span class="string">&#x27;f&#x27;</span>:<span class="keyword">return</span>;<span class="keyword">break</span>;<span class="comment">// 空的或者满的就没有儿子了，停</span></span><br><span class="line">		<span class="keyword">case</span> <span class="string">&#x27;e&#x27;</span>:<span class="keyword">return</span>;<span class="keyword">break</span>;</span><br><span class="line">		<span class="keyword">case</span> <span class="string">&#x27;p&#x27;</span>:&#123;</span><br><span class="line">			<span class="keyword">for</span>(ri i = <span class="number">0</span>;i &lt; <span class="number">4</span>;++i)</span><br><span class="line">				<span class="built_in">dfs</span>(p-&gt;sp[i]);<span class="comment">// 有黑有白，建立四个子树</span></span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">merge</span><span class="params">(node *&amp;p,node *p_)</span></span>&#123;<span class="comment">// 把p_合并到p</span></span><br><span class="line">	<span class="keyword">if</span>(p_ == <span class="literal">NULL</span>)<span class="comment">// 既然要合并的是空的……</span></span><br><span class="line">		<span class="keyword">return</span>;</span><br><span class="line">	<span class="keyword">if</span>(p-&gt;c == <span class="string">&#x27;f&#x27;</span> <span class="keyword">or</span> p_-&gt;c == <span class="string">&#x27;f&#x27;</span>)&#123;<span class="comment">// 任意一个是全黑就可以直接染黑</span></span><br><span class="line">		p-&gt;c = <span class="string">&#x27;f&#x27;</span>;</span><br><span class="line">		<span class="keyword">return</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span>(p-&gt;c == <span class="string">&#x27;e&#x27;</span>)&#123;<span class="comment">// 如果是纯白（则没有儿子）就可以直接染色</span></span><br><span class="line">		p = p_;</span><br><span class="line">		<span class="keyword">return</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span>(ri i = <span class="number">0</span>;i &lt; <span class="number">4</span>;++i)</span><br><span class="line">		<span class="built_in">merge</span>(p-&gt;sp[i],p_-&gt;sp[i]);<span class="comment">// 两个要合并的树都有黑有白，那么就递归给儿子们处理</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">count</span><span class="params">(node *p,<span class="keyword">int</span> edge)</span></span>&#123;<span class="comment">// 记录黑像素数量。edge表示子方块的边长</span></span><br><span class="line">	<span class="keyword">if</span>(p-&gt;c == <span class="string">&#x27;f&#x27;</span>)<span class="comment">// 纯黑，返回面积</span></span><br><span class="line">		<span class="keyword">return</span> edge * edge;</span><br><span class="line">	<span class="keyword">if</span>(p-&gt;c == <span class="string">&#x27;e&#x27;</span>)<span class="comment">// 纯白，返回0</span></span><br><span class="line">		<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	ri tot = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span>(ri i = <span class="number">0</span>;i &lt; <span class="number">4</span>;++i)</span><br><span class="line">		tot += <span class="built_in">count</span>(p-&gt;sp[i],edge / <span class="number">2</span>);<span class="comment">// 有黑有白，递归给儿子们记录儿子们给的值</span></span><br><span class="line">	<span class="keyword">return</span> tot;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span><span class="comment">// 主程序就很整洁了，完全体现思路</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	n = in;</span><br><span class="line">	<span class="keyword">while</span>(n--)&#123;</span><br><span class="line">		<span class="built_in">dfs</span>(root);<span class="comment">// 递归建树1</span></span><br><span class="line">		<span class="built_in">dfs</span>(root_);<span class="comment">// 递归建树2</span></span><br><span class="line">		<span class="built_in">merge</span>(root,root_);<span class="comment">// 合并</span></span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;There are %d black pixels.\n&quot;</span>,<span class="built_in">count</span>(root,<span class="number">32</span>));<span class="comment">// 输出，这里边长确定是32</span></span><br><span class="line">		root = root_ = <span class="literal">NULL</span>;<span class="comment">// 不要忘记清零，它俩还需要服务这个点的下一组数据</span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    OvO</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <tags>
-        <tag>题解</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>疫情下的数学建模</title>
     <url>/2020/08/10/%E7%96%AB%E6%83%85%E4%B8%8B%E7%9A%84%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1/</url>
     <content><![CDATA[<blockquote>
@@ -365,6 +348,23 @@
 <p>如上文所述，各国经济下滑会非常严重，已经出现大量公司裁员、减薪甚至倒闭的情况；中国经济会在面对美国全面打压的情况下恢复较缓慢。</p>
 <p>[^4]: <a href="http://mil.news.sina.com.cn/2020-08-01/doc-iivhuipn6238894.shtml">http://mil.news.sina.com.cn/2020-08-01/doc-iivhuipn6238894.shtml</a> | <a href="https://tech.sina.com.cn/roll/2020-03-01/doc-iimxxstf5485053.shtml">https://tech.sina.com.cn/roll/2020-03-01/doc-iimxxstf5485053.shtml</a></p>
 ]]></content>
+  </entry>
+  <entry>
+    <title>题解 UVA297 【四分树 Quadtrees】</title>
+    <url>/2020/05/01/%E9%A2%98%E8%A7%A3-UVA297-%E3%80%90%E5%9B%9B%E5%88%86%E6%A0%91-Quadtrees%E3%80%91/</url>
+    <content><![CDATA[<p>这种树是可以得知一个节点有没有儿子的，所以只需要先序遍历就可以直接还原这棵树。</p>
+<p>得出解法：边输入边动态建树，把两棵树合并，然后算像素数量。每一步都是用dfs，且都遵循“黑色染，白色空，灰色继续递归”的规则。</p>
+<p>建树：使用递归动态建树。对于每一层递归，都当做输入一个子树，利用指针和 <code>new</code> 的灵活性致使过程很方便。</p>
+<p>合并：黑色染，白色被染，灰色继续递归。</p>
+<p>计数：黑色返回面积，白色返回零，灰色继续递归成更小的子方块处理。</p>
+<span id="more"></span>
+
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">namespace</span> io&#123;<span class="comment">/* 快读太长 删掉 */</span>&#125;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> in io::read()</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> print io::write</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ri register int</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> OvO cout&lt;&lt;<span class="meta-string">&quot;OvO&quot;</span>;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> n;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">node</span>&#123;</span></span><br><span class="line">	<span class="keyword">char</span> c;</span><br><span class="line">	node *sp[<span class="number">4</span>];<span class="comment">// 使用指针实现树，有四个儿子</span></span><br><span class="line">	<span class="built_in">node</span>()&#123;</span><br><span class="line">        c = <span class="number">0</span>;</span><br><span class="line">        sp[<span class="number">0</span>] = sp[<span class="number">1</span>] = sp[<span class="number">2</span>] = sp[<span class="number">3</span>] = <span class="literal">NULL</span>;<span class="comment">// 初始化成空指针</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;*root,*root_;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">dfs</span><span class="params">(node*&amp;p)</span></span>&#123;<span class="comment">// 递归建树。引用指针，也就是一个指针类型在传参的时候引用，注意node&amp;*p是错的</span></span><br><span class="line">	p = <span class="keyword">new</span> node;<span class="comment">// 申请内存开一个子树准备输入</span></span><br><span class="line">	<span class="keyword">while</span>(!(p-&gt;c == <span class="string">&#x27;f&#x27;</span> <span class="keyword">or</span> p-&gt;c == <span class="string">&#x27;e&#x27;</span> <span class="keyword">or</span> p-&gt;c == <span class="string">&#x27;p&#x27;</span>))<span class="comment">// 吃掉空字符</span></span><br><span class="line">		p-&gt;c = <span class="built_in">getchar</span>();</span><br><span class="line">	<span class="built_in"><span class="keyword">switch</span></span>(p-&gt;c)&#123;</span><br><span class="line">		<span class="keyword">case</span> <span class="string">&#x27;f&#x27;</span>:<span class="keyword">return</span>;<span class="keyword">break</span>;<span class="comment">// 空的或者满的就没有儿子了，停</span></span><br><span class="line">		<span class="keyword">case</span> <span class="string">&#x27;e&#x27;</span>:<span class="keyword">return</span>;<span class="keyword">break</span>;</span><br><span class="line">		<span class="keyword">case</span> <span class="string">&#x27;p&#x27;</span>:&#123;</span><br><span class="line">			<span class="keyword">for</span>(ri i = <span class="number">0</span>;i &lt; <span class="number">4</span>;++i)</span><br><span class="line">				<span class="built_in">dfs</span>(p-&gt;sp[i]);<span class="comment">// 有黑有白，建立四个子树</span></span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">merge</span><span class="params">(node *&amp;p,node *p_)</span></span>&#123;<span class="comment">// 把p_合并到p</span></span><br><span class="line">	<span class="keyword">if</span>(p_ == <span class="literal">NULL</span>)<span class="comment">// 既然要合并的是空的……</span></span><br><span class="line">		<span class="keyword">return</span>;</span><br><span class="line">	<span class="keyword">if</span>(p-&gt;c == <span class="string">&#x27;f&#x27;</span> <span class="keyword">or</span> p_-&gt;c == <span class="string">&#x27;f&#x27;</span>)&#123;<span class="comment">// 任意一个是全黑就可以直接染黑</span></span><br><span class="line">		p-&gt;c = <span class="string">&#x27;f&#x27;</span>;</span><br><span class="line">		<span class="keyword">return</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span>(p-&gt;c == <span class="string">&#x27;e&#x27;</span>)&#123;<span class="comment">// 如果是纯白（则没有儿子）就可以直接染色</span></span><br><span class="line">		p = p_;</span><br><span class="line">		<span class="keyword">return</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span>(ri i = <span class="number">0</span>;i &lt; <span class="number">4</span>;++i)</span><br><span class="line">		<span class="built_in">merge</span>(p-&gt;sp[i],p_-&gt;sp[i]);<span class="comment">// 两个要合并的树都有黑有白，那么就递归给儿子们处理</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">count</span><span class="params">(node *p,<span class="keyword">int</span> edge)</span></span>&#123;<span class="comment">// 记录黑像素数量。edge表示子方块的边长</span></span><br><span class="line">	<span class="keyword">if</span>(p-&gt;c == <span class="string">&#x27;f&#x27;</span>)<span class="comment">// 纯黑，返回面积</span></span><br><span class="line">		<span class="keyword">return</span> edge * edge;</span><br><span class="line">	<span class="keyword">if</span>(p-&gt;c == <span class="string">&#x27;e&#x27;</span>)<span class="comment">// 纯白，返回0</span></span><br><span class="line">		<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	ri tot = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span>(ri i = <span class="number">0</span>;i &lt; <span class="number">4</span>;++i)</span><br><span class="line">		tot += <span class="built_in">count</span>(p-&gt;sp[i],edge / <span class="number">2</span>);<span class="comment">// 有黑有白，递归给儿子们记录儿子们给的值</span></span><br><span class="line">	<span class="keyword">return</span> tot;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span><span class="comment">// 主程序就很整洁了，完全体现思路</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	n = in;</span><br><span class="line">	<span class="keyword">while</span>(n--)&#123;</span><br><span class="line">		<span class="built_in">dfs</span>(root);<span class="comment">// 递归建树1</span></span><br><span class="line">		<span class="built_in">dfs</span>(root_);<span class="comment">// 递归建树2</span></span><br><span class="line">		<span class="built_in">merge</span>(root,root_);<span class="comment">// 合并</span></span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;There are %d black pixels.\n&quot;</span>,<span class="built_in">count</span>(root,<span class="number">32</span>));<span class="comment">// 输出，这里边长确定是32</span></span><br><span class="line">		root = root_ = <span class="literal">NULL</span>;<span class="comment">// 不要忘记清零，它俩还需要服务这个点的下一组数据</span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    OvO</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <tags>
+        <tag>题解</tag>
+      </tags>
   </entry>
   <entry>
     <title>题解 P1569 【[USACO11FEB]属牛的抗议Generic Cow Prote…】</title>
