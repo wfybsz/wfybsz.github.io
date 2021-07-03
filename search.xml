@@ -39,70 +39,6 @@
       </tags>
   </entry>
   <entry>
-    <title>快速打开指定bv或av号的b站视频</title>
-    <url>/2020/02/23/%E5%BF%AB%E9%80%9F%E6%89%93%E5%BC%80%E6%8C%87%E5%AE%9Aav%E5%8F%B7%E7%9A%84b%E7%AB%99%E8%A7%86%E9%A2%91/</url>
-    <content><![CDATA[<p>最近跟朋友互相分享视频总是用 av 号，打开浏览器再输入号码特别麻烦，于是花了点时间搞了个快速打开视频的方法。</p>
-<hr>
-<p>首先建一个空的文件夹，把位置复制下来。</p>
-<p>回桌面选中 <strong>此电脑</strong> 按下 <code>Alt</code> + <code>Enter</code> 打开属性界面。</p>
-<p>点击左边的 <strong>高级系统设置</strong>，出现的小窗口点右下角的 <strong>环境变量</strong>，又出现的小窗口中下面那一栏 <strong>系统变量</strong> 里找到 <code>Path</code> 双击，又一次弹出窗口。Win7 系统直接在那一长条文本的开头粘贴刚才空文件夹的位置，然后加一个 <code>;</code> （注意是英文分号）与后面的文本分隔开；Win10 系统点击右侧新建然后粘贴，<code>Enter</code>。所有窗口点 <strong>确定</strong> 来关掉它，然后把刚开始打开的系统属性也关掉。</p>
-<hr>
-<p>这里我介绍两种版本。</p>
-<span id="more"></span>
-
-<h3 id="需要输入-av-号"><a href="#需要输入-av-号" class="headerlink" title="需要输入 av 号"></a>需要输入 av 号</h3><p>在之前建好的空文件夹里新建一个名为 <code>av.bat</code> 的文件，右键它选 <strong>编辑</strong>，在弹出来的空记事本里粘贴这段：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="string">&quot;C:\Program Files\Mozilla Firefox\firefox.exe&quot;</span> https://www.bilibili.com/video/av%1</span><br></pre></td></tr></table></figure>
-
-<p>注意将引号里的内容变成你自己浏览器的位置。</p>
-<p>比如要看 Lex 的一月新番导视。</p>
-<p>按下 <code>Windows</code> + <code>R</code>，在出现的小窗口里填上 <code>av 79903305</code>，<code>Enter</code>，浏览器自动启动并打开了 Lex 的视频。</p>
-<h3 id="需要复制av号"><a href="#需要复制av号" class="headerlink" title="需要复制av号"></a>需要复制av号</h3><p>原理是获取剪贴板内容到变量再给浏览器。</p>
-<p>在之前建好的空文件夹里新建一个名为 <code>clp.bat</code> 的文件（别的名字也行），右键它选 <strong>编辑</strong>，在弹出来的空记事本里粘贴这段：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">@<span class="built_in">echo</span> off</span><br><span class="line">setlocal enabledelayedexpansion</span><br><span class="line"><span class="built_in">set</span> ms=mshta vbscript:CreateObject(<span class="string">&quot;Scripting.FileSystemObject&quot;</span>).GetStandardStream(1).Write(clipboardData.getData(<span class="string">&quot;text&quot;</span>))(close)</span><br><span class="line"><span class="keyword">for</span> /f <span class="string">&quot;delims=&quot;</span> %%i <span class="keyword">in</span> (<span class="string">&#x27;!ms!&#x27;</span>) <span class="keyword">do</span> (</span><br><span class="line"><span class="built_in">set</span> a=%%i</span><br><span class="line"><span class="string">&quot;C:\Program Files\Mozilla Firefox\firefox.exe&quot;</span> https:\\www.bilibili.com\video\!a!</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
-
-<p>注意将第 6 行引号里的内容变成你自己浏览器的位置。</p>
-<p>比如要看 Lex 的一月新番导视。</p>
-<p>复制 <code>av79903305</code>，按下 <code>Windows</code> + <code>R</code>，输入 <code>clp</code>（或者你自己写的文件名），<code>Enter</code>，浏览器自动启动并打开了 Lex 的视频。</p>
-<p>这个版本相较第一个版本的优点在于可以直接双击这个文件来打开，或者创建一个指向这个文件的快捷方式，甚至放到任务栏上也可以快捷打开。</p>
-<hr>
-<p>Upd 2020-03-23</p>
-<p>今天我刷 b 站的时候看到链接变成 <code>BV</code> 开头的了……然后我看到了<a href="https://www.bilibili.com/read/cv5167957">这个</a>。</p>
-<p>我 tm 刚写了一个月的东西就这么注定逐渐荒废掉了？？？</p>
-<p>还好之前的还能用。</p>
-<p>而且我的更新压力很小啊嘿嘿嘿</p>
-<h3 id="更新——快速打开指定-BV-号视频"><a href="#更新——快速打开指定-BV-号视频" class="headerlink" title="更新——快速打开指定 BV 号视频"></a>更新——快速打开指定 BV 号视频</h3><p><code>BV.bat</code></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="string">&quot;C:\Program Files\Mozilla Firefox\firefox.exe&quot;</span> https://www.bilibili.com/video/BV%1</span><br></pre></td></tr></table></figure>]]></content>
-      <tags>
-        <tag>分享</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>抗疫时代生活杂谈</title>
-    <url>/2020/05/31/%E6%8A%97%E7%96%AB%E6%97%B6%E4%BB%A3%E7%94%9F%E6%B4%BB%E6%9D%82%E8%B0%88/</url>
-    <content><![CDATA[<p>一月底突然就得知了疫情爆发的消息，也不清楚是什么病毒，但是知道必须待在家里，像个小孩一样懵懂。寒假期间当然对生活没有什么影响，不过这个时间倒是比较及时——本来计划没过多久就要去日本的，要是晚了几周我们全家就被困在东京了，想想那个人口密度和日本现在极不乐观的状况也是很后怕。其它的就没有什么特别问题了，依然终日与寒假作业为伴。</p>
-<p>“要是没有这病毒，我们现在就在酒店里呢。”母上玩着手机，突然就说出这么句话。已经过去一周了，我甚至没碰过家门，掐指一算已经是在九楼高空跟着地球飞了五十万里。我这辈子也没在家里宅过这么长时间，想想觉得挺夸张。全国人民都在关注武汉、湖北，每天盯着感染、死亡人数盼着这事快点结束。我，以及这个国家大多数人，都太乐观了。</p>
-<p>回过头来想，其他国家的人在做什么呢？恐怕别的国家的一个城市爆发了一种病毒并不足以让他们感到惊恐吧。</p>
-<span id="more"></span>
-
-<p>逐渐适应了在家的生活，我的网课就开始了。二月初我的信竞课老师发过来网课软件的下载地址，我就在 eeo.cn 下载了个叫 ClassIn 的软件。毕竟平常也是在机房上的课，网课并没有给我很大便利的感觉，只是自己家里的电脑终于不用每次打开都配置一堆东西了。整个一月和二月的序言这一个月的宅家经历并没有对我造成很大影响，但其他人可能没有这么满不在乎。</p>
-<p>我的朋友圈似乎没有被这特殊情况影响到，女孩子该出去玩就玩，某岩某甚至去金源换了手机（据她所说那里人密度其实还好）。男生也憋不住玩心，每天叫着哥们去球场打球。仿佛被困在家里的只有我，而事实也和这没啥区别，大多数人该玩玩该吃吃并没有很谨慎。</p>
-<p>情人节快到了，而对我们来说就是开学这种灾难片。当老妈再次通知我开学无望时，我是比较开心的，但这也是疫情正在升级的佐证。看到班群里老王发的链接居然不是钉钉而是我早就见过的链接时，我就感到胸有成竹了，大家都在捣鼓新软件的时候我却可以先一步适应系统，进入状态。然而朋友圈像是要再次像我证明只有我在封闭一样，一条条的都是大家留下自己的 ClassIn 号。他们把这系统当社交软件了，果然还是每逢开学所有家长必说的一句话：放假时间长了，心飞了。</p>
-<p>海量的生物作业和两周一换的打印机墨盒狠狠打了我的脸。作业还在可承受的范围内，但是生物作业量着实把我吓了一跳。别的科目都是一张小练习或者笔记，生物学案打印有时就要五分钟。作业也没有很多提醒机制，再加上我态度比较松懈，时不时有作业超时的情况。后来在有关部门（老爸老妈）的责令整改下，我养成了写完一个作业看一下 ClassIn 的习惯。到了二月底，我就彻底习惯了每天七点半爬起来吃早饭上网课的生活。</p>
-<p>病毒逐渐逃出河北，很快感染了整个国家。网页上那只鸡从心腹处冒着火，烧遍了整只鸡。人烟稀少的鸡尾巴也从纯白色变成淡红色的那一天起，不论是感性来说还是理性来讲，整个国家所有省份都被感染了。政府极力停止航班，病毒却还是飞出了中国，蔓延到了全世界。很多国家的人民拒绝戴口罩，直接导致了感染数飙升。一个很好的游戏，瘟疫公司，也因为疫情的升级在国区 App Store 消失。这已经成为了全人类共同面对的问题。而说是全人类，却并不非常友善。美国某些媒体要求中国道歉并赔偿，因为这是中国释放的病毒。不久，特朗普就说出了“Chinese Virus”这个词。虽然全世界已经连接起来，却还是没有联结起来。</p>
-<p>对比 03 年的非典，网络的力量就很好地显现了出来。虽然新冠比非典厉害很多，对大家的影响却没有当年那么巨大。网课得以实现，及其成熟的外卖甚至没有被大量的订单搞崩溃。这也是对基础国力的一次考验，我国倾尽国力，成功控制住了局面。但这其中却有无数人因这病毒永远留在了这个春天。很快来到了四月，这个早晨一片悲鸣，防空警报和汽笛齐响，悼念逝者。熟悉的 b 站页面变成了黑白，大量的微博头像也失去了颜色。</p>
-<p>网课的弊端是每个人都知道的，这是很考验学生自主学习能力的一段时间。有的人经常迟到，有的人对作业态度低落。但网课也有很多好处，对于交流的效率有很大提升，每一个学生都坐在最好的位置，不用为看不清黑板听不清老师讲课苦恼。教委开放新内容之后所有人终于适应了每天在家学习的生活，但某种情绪正在累积着。</p>
-<p>相对于学生，社会上却是危机重重。从美股持续暴跌到各大公司裁员，大新闻或者身边的小事都在影响着每一个职场人的生活。有的人上有老下有小车贷房贷全压在自己身上，就在这种倒立的金字塔上好不容易打拼了一年，工作一下子就没了。美国经济状况也非常可怕，曾经所有人都觉得像国家战争状态一样只是原则上存在而不可能发生的熔断机制居然接二连三地出现，更有甚者戏称传奇股神巴菲特还年轻。</p>
-<p>一切都没有刚开始想的那样简单。</p>
-<p>恐怖的死亡量，疫苗研发速度又如此缓慢。我慢慢才发现这个世界不是只有我和我认识的人，每天增长的数字，都是一条条生命的消逝。网络上从各种各样的话题逐渐向疫情聚集，到现在每个人在网络上最关注的就是今天又新增了多少人。医学成为人类的希望，而无私奉献、坚持一线战斗的医生们也被大家崇拜。也许这一段 RNA 揭露了人性的丑恶，但它也让人性的光辉照耀开。</p>
-<blockquote>
-<p>2020 年，一种新型冠状病毒在中国武汉爆发，很快蔓延至全世界。[配图]——《义务教育教科书 生物 八年级 上册》第五单元 生物圈中的其他生物 第五章 病毒，人民教育出版社，2025 年版</p>
-</blockquote>
-]]></content>
-      <tags>
-        <tag>个人</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>数学笔记</title>
     <url>/2021/07/01/%E6%95%B0%E5%AD%A6%E7%AC%94%E8%AE%B0/</url>
     <content><![CDATA[<h1 id="集合"><a href="#集合" class="headerlink" title="集合"></a>集合</h1><p>大写字母表示</p>
@@ -148,7 +84,8 @@
 <p>讨论：</p>
 <ol>
 <li><p>$$<br> \begin{cases}<br> a+d=aq<br> \<br> a+2d=aq^2<br> \end{cases}<br> \<br> $$</p>
-<p> 推导<br> $$<br> \begin{cases}<br> d=a(q-1)<br> \<br> 2d=a(q^2-1)<br> \end{cases}<br> \<br> \begin{cases}<br> \dfrac{2d}d=2=\dfrac{q^2-1}{q-1}=q+1<br> \end{cases}<br> \<br> q=1\text{，舍}<br> $$</p>
+<p> 推导</p>
+<p> $$<br> \begin{cases}<br> d=a(q-1)<br> \<br> 2d=a(q^2-1)<br> \end{cases}<br> \<br> \begin{cases}<br> \dfrac{2d}d=2=\dfrac{q^2-1}{q-1}=q+1<br> \end{cases}<br> \<br> q=1\text{，舍}<br> $$</p>
 </li>
 <li><p>$$<br> \begin{cases}<br> a+d=aq^2<br> \<br> a+2d=aq<br> \end{cases}<br> $$</p>
 <p> 同理可得 $q=\frac12$</p>
@@ -162,7 +99,11 @@
 <h4 id="例题-3"><a href="#例题-3" class="headerlink" title="例题 3"></a>例题 3</h4><blockquote>
 <p>已知集合 $M={x|(x-a)(x^2-ax+a-1)=0}$ 各元素之和为 $3$ ，求 $a$</p>
 </blockquote>
-<p>考虑特征性质<br>$$<br>(x-a)(x^2-ax+a-1)=(x-a)(x-a+1)(x-1)=0<br>$$<br>则<br>$$<br>x_1=a,x_2=a-1,x_3=1<br>$$<br>解得 $a=\frac32$</p>
+<p>考虑特征性质</p>
+<p>$$<br>(x-a)(x^2-ax+a-1)=(x-a)(x-a+1)(x-1)=0<br>$$</p>
+<p>则</p>
+<p>$$<br>x_1=a,x_2=a-1,x_3=1<br>$$</p>
+<p>解得 $a=\frac32$</p>
 <p>若 $a=1$ ，则和为 $1$ ；</p>
 <p>若 $a-1=1$ 即 $a=2$ ，则和为 $3$</p>
 <p>综上， $a=\frac32$ 或 $a=2$</p>
@@ -219,21 +160,43 @@
 <li>$p:\forall x\in A,p(x)\rightarrow\lnot p:\exists x\in A,\lnot p(x)$</li>
 <li>$p:\exists x\in A,p(x)\rightarrow\lnot p:\forall x\in A,\lnot p(x)$</li>
 </ul>
+<h4 id="例题-6"><a href="#例题-6" class="headerlink" title="例题 6"></a>例题 6</h4><blockquote>
+<p>已知 $p=\forall x\in\mathbb R,\exists n\in\mathbb N^*$ 使得 $n\ge x^2$，求 $\lnot p$</p>
+</blockquote>
+<p>$$<br>\lnot p=\exists x\in\mathbb R,\forall n\in\mathbb N^*\text{使得}n&lt;x^2<br>$$</p>
+<h2 id="充分条件与必要条件"><a href="#充分条件与必要条件" class="headerlink" title="充分条件与必要条件"></a>充分条件与必要条件</h2><p>若 $p\rightarrow q$，则 $p$ 是 $q$ 的充分条件，$q$ 是 $p$ 的必要条件</p>
+<h4 id="例题-7"><a href="#例题-7" class="headerlink" title="例题 7"></a>例题 7</h4><blockquote>
+<p>若 $\lnot p$ 是 $q$ 的必要不充分条件，则 $p$ 是 $\lnot q$ 的</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>A. 充分不必要条件</th>
+<th>B. 必要不充分条件</th>
+<th>C. 充分必要条件</th>
+<th>D. 不充分不必要条件</th>
+</tr>
+</thead>
+</table>
+<p>A，略</p>
+<h1 id="等式与不等式"><a href="#等式与不等式" class="headerlink" title="等式与不等式"></a>等式与不等式</h1><h2 id="等式的性质与方程的解集"><a href="#等式的性质与方程的解集" class="headerlink" title="等式的性质与方程的解集"></a>等式的性质与方程的解集</h2><h3 id="因式分解"><a href="#因式分解" class="headerlink" title="因式分解"></a>因式分解</h3><ol>
+<li>平方差公式 $(a+b)(a-b)=a^2-b^2$</li>
+<li>立方和公式 $a^3+b^3=(a+b)(a^2-ab+b^2)$</li>
+<li>立方差公式 $a^3-b^3=(a-b)(a^2+ab+b^2)$</li>
+<li>$(ax+b)(cx+d)=acx^2+(ad+bc)x+bd$</li>
+<li>$a^2+b^2+c^2\pm ab\pm bc\pm ac=\frac12[(a\pm b)^2+(b\pm c)^2+(c\pm a)^2]$</li>
+<li>$x^3+y^3+z^3=(x+y+z)(x^2+y^2+z^2-xy-yz-xz)$</li>
+</ol>
+<h3 id="韦达定理"><a href="#韦达定理" class="headerlink" title="韦达定理"></a>韦达定理</h3><p>一元二次方程 $ax^2+bx+c=0$ 的两根 $x_1,x_2$ 满足如下关系：<br>$$<br>\begin{cases}<br>x_1+x_2=-\dfrac ba<br>\<br>x_1x_2=\dfrac ca<br>\end{cases}<br>$$</p>
+<h4 id="例题-8"><a href="#例题-8" class="headerlink" title="例题 8"></a>例题 8</h4><blockquote>
+<p>对于方程 $x^2+4x+1=0$ 的两根 $x_1,x_2$，求：</p>
+<ol>
+<li>$x_1^2+x_2^2,x_1^3+x_2^3$</li>
+</ol>
+</blockquote>
 ]]></content>
       <tags>
         <tag>笔记</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>题解 P1569 【[USACO11FEB]属牛的抗议Generic Cow Prote…】</title>
-    <url>/2019/10/05/%E9%A2%98%E8%A7%A3P1569%E3%80%90-USACO11FEB-%E5%B1%9E%E7%89%9B%E7%9A%84%E6%8A%97%E8%AE%AEGeneric-Cow-Prote%E2%80%A6%E3%80%91/</url>
-    <content><![CDATA[<p>典型的一维 DP。</p>
-<p>既然是连续的，那么 $sum_i$ 表示前 $i$ 个数的和，$dp_i$ 表示前 $i$ 个数的答案，也就是前 $i$ 头奶牛最多分成 $dp_i$ 组。</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> OvO cout&lt;&lt;<span class="meta-string">&quot;OvO&quot;</span>;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> NR = <span class="number">1e3</span> + <span class="number">10</span>;</span><br><span class="line"><span class="keyword">int</span> n,dp[NR],sum[NR];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">memset</span>(dp,<span class="number">-999999</span>,<span class="built_in"><span class="keyword">sizeof</span></span>(dp));<span class="comment">//预设成最小，这里-999999（我也忘了是bit还是Byte了）大概就接近int最小值</span></span><br><span class="line">	cin&gt;&gt;n;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>;i &lt;= n;++i)&#123;</span><br><span class="line">		cin&gt;&gt;sum[i];</span><br><span class="line">		sum[i] += sum[i - <span class="number">1</span>];<span class="comment">//这里要记录的是前i个数的和</span></span><br><span class="line">	&#125;</span><br><span class="line">	dp[<span class="number">0</span>] = <span class="number">0</span>;<span class="comment">//第一个元素设为0，方便下面的j = 0处理</span></span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>;i &lt;= n;++i)&#123;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span>;j &lt; i;++j)</span><br><span class="line">			<span class="keyword">if</span>(sum[i] - sum[j] &gt;= <span class="number">0</span>)<span class="comment">//如果这一段的理智度可以接受</span></span><br><span class="line">				dp[i] = <span class="built_in">max</span>(dp[j] + <span class="number">1</span>,dp[i]);<span class="comment">//判断大小，决定状态</span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span>(dp[n] &lt; <span class="number">-1e9</span>)</span><br><span class="line">		cout&lt;&lt;<span class="string">&quot;Impossible&quot;</span>;<span class="comment">//没有算出结果，也就是没有状态变动，无解</span></span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">		cout&lt;&lt;dp[n];<span class="comment">//有解，输出答案</span></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    OvO</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <tags>
-        <tag>题解</tag>
       </tags>
   </entry>
   <entry>
@@ -362,6 +325,44 @@
 ]]></content>
   </entry>
   <entry>
+    <title>抗疫时代生活杂谈</title>
+    <url>/2020/05/31/%E6%8A%97%E7%96%AB%E6%97%B6%E4%BB%A3%E7%94%9F%E6%B4%BB%E6%9D%82%E8%B0%88/</url>
+    <content><![CDATA[<p>一月底突然就得知了疫情爆发的消息，也不清楚是什么病毒，但是知道必须待在家里，像个小孩一样懵懂。寒假期间当然对生活没有什么影响，不过这个时间倒是比较及时——本来计划没过多久就要去日本的，要是晚了几周我们全家就被困在东京了，想想那个人口密度和日本现在极不乐观的状况也是很后怕。其它的就没有什么特别问题了，依然终日与寒假作业为伴。</p>
+<p>“要是没有这病毒，我们现在就在酒店里呢。”母上玩着手机，突然就说出这么句话。已经过去一周了，我甚至没碰过家门，掐指一算已经是在九楼高空跟着地球飞了五十万里。我这辈子也没在家里宅过这么长时间，想想觉得挺夸张。全国人民都在关注武汉、湖北，每天盯着感染、死亡人数盼着这事快点结束。我，以及这个国家大多数人，都太乐观了。</p>
+<p>回过头来想，其他国家的人在做什么呢？恐怕别的国家的一个城市爆发了一种病毒并不足以让他们感到惊恐吧。</p>
+<span id="more"></span>
+
+<p>逐渐适应了在家的生活，我的网课就开始了。二月初我的信竞课老师发过来网课软件的下载地址，我就在 eeo.cn 下载了个叫 ClassIn 的软件。毕竟平常也是在机房上的课，网课并没有给我很大便利的感觉，只是自己家里的电脑终于不用每次打开都配置一堆东西了。整个一月和二月的序言这一个月的宅家经历并没有对我造成很大影响，但其他人可能没有这么满不在乎。</p>
+<p>我的朋友圈似乎没有被这特殊情况影响到，女孩子该出去玩就玩，某岩某甚至去金源换了手机（据她所说那里人密度其实还好）。男生也憋不住玩心，每天叫着哥们去球场打球。仿佛被困在家里的只有我，而事实也和这没啥区别，大多数人该玩玩该吃吃并没有很谨慎。</p>
+<p>情人节快到了，而对我们来说就是开学这种灾难片。当老妈再次通知我开学无望时，我是比较开心的，但这也是疫情正在升级的佐证。看到班群里老王发的链接居然不是钉钉而是我早就见过的链接时，我就感到胸有成竹了，大家都在捣鼓新软件的时候我却可以先一步适应系统，进入状态。然而朋友圈像是要再次像我证明只有我在封闭一样，一条条的都是大家留下自己的 ClassIn 号。他们把这系统当社交软件了，果然还是每逢开学所有家长必说的一句话：放假时间长了，心飞了。</p>
+<p>海量的生物作业和两周一换的打印机墨盒狠狠打了我的脸。作业还在可承受的范围内，但是生物作业量着实把我吓了一跳。别的科目都是一张小练习或者笔记，生物学案打印有时就要五分钟。作业也没有很多提醒机制，再加上我态度比较松懈，时不时有作业超时的情况。后来在有关部门（老爸老妈）的责令整改下，我养成了写完一个作业看一下 ClassIn 的习惯。到了二月底，我就彻底习惯了每天七点半爬起来吃早饭上网课的生活。</p>
+<p>病毒逐渐逃出河北，很快感染了整个国家。网页上那只鸡从心腹处冒着火，烧遍了整只鸡。人烟稀少的鸡尾巴也从纯白色变成淡红色的那一天起，不论是感性来说还是理性来讲，整个国家所有省份都被感染了。政府极力停止航班，病毒却还是飞出了中国，蔓延到了全世界。很多国家的人民拒绝戴口罩，直接导致了感染数飙升。一个很好的游戏，瘟疫公司，也因为疫情的升级在国区 App Store 消失。这已经成为了全人类共同面对的问题。而说是全人类，却并不非常友善。美国某些媒体要求中国道歉并赔偿，因为这是中国释放的病毒。不久，特朗普就说出了“Chinese Virus”这个词。虽然全世界已经连接起来，却还是没有联结起来。</p>
+<p>对比 03 年的非典，网络的力量就很好地显现了出来。虽然新冠比非典厉害很多，对大家的影响却没有当年那么巨大。网课得以实现，及其成熟的外卖甚至没有被大量的订单搞崩溃。这也是对基础国力的一次考验，我国倾尽国力，成功控制住了局面。但这其中却有无数人因这病毒永远留在了这个春天。很快来到了四月，这个早晨一片悲鸣，防空警报和汽笛齐响，悼念逝者。熟悉的 b 站页面变成了黑白，大量的微博头像也失去了颜色。</p>
+<p>网课的弊端是每个人都知道的，这是很考验学生自主学习能力的一段时间。有的人经常迟到，有的人对作业态度低落。但网课也有很多好处，对于交流的效率有很大提升，每一个学生都坐在最好的位置，不用为看不清黑板听不清老师讲课苦恼。教委开放新内容之后所有人终于适应了每天在家学习的生活，但某种情绪正在累积着。</p>
+<p>相对于学生，社会上却是危机重重。从美股持续暴跌到各大公司裁员，大新闻或者身边的小事都在影响着每一个职场人的生活。有的人上有老下有小车贷房贷全压在自己身上，就在这种倒立的金字塔上好不容易打拼了一年，工作一下子就没了。美国经济状况也非常可怕，曾经所有人都觉得像国家战争状态一样只是原则上存在而不可能发生的熔断机制居然接二连三地出现，更有甚者戏称传奇股神巴菲特还年轻。</p>
+<p>一切都没有刚开始想的那样简单。</p>
+<p>恐怖的死亡量，疫苗研发速度又如此缓慢。我慢慢才发现这个世界不是只有我和我认识的人，每天增长的数字，都是一条条生命的消逝。网络上从各种各样的话题逐渐向疫情聚集，到现在每个人在网络上最关注的就是今天又新增了多少人。医学成为人类的希望，而无私奉献、坚持一线战斗的医生们也被大家崇拜。也许这一段 RNA 揭露了人性的丑恶，但它也让人性的光辉照耀开。</p>
+<blockquote>
+<p>2020 年，一种新型冠状病毒在中国武汉爆发，很快蔓延至全世界。[配图]——《义务教育教科书 生物 八年级 上册》第五单元 生物圈中的其他生物 第五章 病毒，人民教育出版社，2025 年版</p>
+</blockquote>
+]]></content>
+      <tags>
+        <tag>个人</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>题解 P1569 【[USACO11FEB]属牛的抗议Generic Cow Prote…】</title>
+    <url>/2019/10/05/%E9%A2%98%E8%A7%A3P1569%E3%80%90-USACO11FEB-%E5%B1%9E%E7%89%9B%E7%9A%84%E6%8A%97%E8%AE%AEGeneric-Cow-Prote%E2%80%A6%E3%80%91/</url>
+    <content><![CDATA[<p>典型的一维 DP。</p>
+<p>既然是连续的，那么 $sum_i$ 表示前 $i$ 个数的和，$dp_i$ 表示前 $i$ 个数的答案，也就是前 $i$ 头奶牛最多分成 $dp_i$ 组。</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> OvO cout&lt;&lt;<span class="meta-string">&quot;OvO&quot;</span>;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> NR = <span class="number">1e3</span> + <span class="number">10</span>;</span><br><span class="line"><span class="keyword">int</span> n,dp[NR],sum[NR];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">memset</span>(dp,<span class="number">-999999</span>,<span class="built_in"><span class="keyword">sizeof</span></span>(dp));<span class="comment">//预设成最小，这里-999999（我也忘了是bit还是Byte了）大概就接近int最小值</span></span><br><span class="line">	cin&gt;&gt;n;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>;i &lt;= n;++i)&#123;</span><br><span class="line">		cin&gt;&gt;sum[i];</span><br><span class="line">		sum[i] += sum[i - <span class="number">1</span>];<span class="comment">//这里要记录的是前i个数的和</span></span><br><span class="line">	&#125;</span><br><span class="line">	dp[<span class="number">0</span>] = <span class="number">0</span>;<span class="comment">//第一个元素设为0，方便下面的j = 0处理</span></span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>;i &lt;= n;++i)&#123;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span>;j &lt; i;++j)</span><br><span class="line">			<span class="keyword">if</span>(sum[i] - sum[j] &gt;= <span class="number">0</span>)<span class="comment">//如果这一段的理智度可以接受</span></span><br><span class="line">				dp[i] = <span class="built_in">max</span>(dp[j] + <span class="number">1</span>,dp[i]);<span class="comment">//判断大小，决定状态</span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span>(dp[n] &lt; <span class="number">-1e9</span>)</span><br><span class="line">		cout&lt;&lt;<span class="string">&quot;Impossible&quot;</span>;<span class="comment">//没有算出结果，也就是没有状态变动，无解</span></span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">		cout&lt;&lt;dp[n];<span class="comment">//有解，输出答案</span></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    OvO</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <tags>
+        <tag>题解</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>题解 UVA297 【四分树 Quadtrees】</title>
     <url>/2020/05/01/%E9%A2%98%E8%A7%A3-UVA297-%E3%80%90%E5%9B%9B%E5%88%86%E6%A0%91-Quadtrees%E3%80%91/</url>
     <content><![CDATA[<p>这种树是可以得知一个节点有没有儿子的，所以只需要先序遍历就可以直接还原这棵树。</p>
@@ -376,6 +377,44 @@
 ]]></content>
       <tags>
         <tag>题解</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>快速打开指定bv或av号的b站视频</title>
+    <url>/2020/02/23/%E5%BF%AB%E9%80%9F%E6%89%93%E5%BC%80%E6%8C%87%E5%AE%9Aav%E5%8F%B7%E7%9A%84b%E7%AB%99%E8%A7%86%E9%A2%91/</url>
+    <content><![CDATA[<p>最近跟朋友互相分享视频总是用 av 号，打开浏览器再输入号码特别麻烦，于是花了点时间搞了个快速打开视频的方法。</p>
+<hr>
+<p>首先建一个空的文件夹，把位置复制下来。</p>
+<p>回桌面选中 <strong>此电脑</strong> 按下 <code>Alt</code> + <code>Enter</code> 打开属性界面。</p>
+<p>点击左边的 <strong>高级系统设置</strong>，出现的小窗口点右下角的 <strong>环境变量</strong>，又出现的小窗口中下面那一栏 <strong>系统变量</strong> 里找到 <code>Path</code> 双击，又一次弹出窗口。Win7 系统直接在那一长条文本的开头粘贴刚才空文件夹的位置，然后加一个 <code>;</code> （注意是英文分号）与后面的文本分隔开；Win10 系统点击右侧新建然后粘贴，<code>Enter</code>。所有窗口点 <strong>确定</strong> 来关掉它，然后把刚开始打开的系统属性也关掉。</p>
+<hr>
+<p>这里我介绍两种版本。</p>
+<span id="more"></span>
+
+<h3 id="需要输入-av-号"><a href="#需要输入-av-号" class="headerlink" title="需要输入 av 号"></a>需要输入 av 号</h3><p>在之前建好的空文件夹里新建一个名为 <code>av.bat</code> 的文件，右键它选 <strong>编辑</strong>，在弹出来的空记事本里粘贴这段：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="string">&quot;C:\Program Files\Mozilla Firefox\firefox.exe&quot;</span> https://www.bilibili.com/video/av%1</span><br></pre></td></tr></table></figure>
+
+<p>注意将引号里的内容变成你自己浏览器的位置。</p>
+<p>比如要看 Lex 的一月新番导视。</p>
+<p>按下 <code>Windows</code> + <code>R</code>，在出现的小窗口里填上 <code>av 79903305</code>，<code>Enter</code>，浏览器自动启动并打开了 Lex 的视频。</p>
+<h3 id="需要复制av号"><a href="#需要复制av号" class="headerlink" title="需要复制av号"></a>需要复制av号</h3><p>原理是获取剪贴板内容到变量再给浏览器。</p>
+<p>在之前建好的空文件夹里新建一个名为 <code>clp.bat</code> 的文件（别的名字也行），右键它选 <strong>编辑</strong>，在弹出来的空记事本里粘贴这段：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">@<span class="built_in">echo</span> off</span><br><span class="line">setlocal enabledelayedexpansion</span><br><span class="line"><span class="built_in">set</span> ms=mshta vbscript:CreateObject(<span class="string">&quot;Scripting.FileSystemObject&quot;</span>).GetStandardStream(1).Write(clipboardData.getData(<span class="string">&quot;text&quot;</span>))(close)</span><br><span class="line"><span class="keyword">for</span> /f <span class="string">&quot;delims=&quot;</span> %%i <span class="keyword">in</span> (<span class="string">&#x27;!ms!&#x27;</span>) <span class="keyword">do</span> (</span><br><span class="line"><span class="built_in">set</span> a=%%i</span><br><span class="line"><span class="string">&quot;C:\Program Files\Mozilla Firefox\firefox.exe&quot;</span> https:\\www.bilibili.com\video\!a!</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+
+<p>注意将第 6 行引号里的内容变成你自己浏览器的位置。</p>
+<p>比如要看 Lex 的一月新番导视。</p>
+<p>复制 <code>av79903305</code>，按下 <code>Windows</code> + <code>R</code>，输入 <code>clp</code>（或者你自己写的文件名），<code>Enter</code>，浏览器自动启动并打开了 Lex 的视频。</p>
+<p>这个版本相较第一个版本的优点在于可以直接双击这个文件来打开，或者创建一个指向这个文件的快捷方式，甚至放到任务栏上也可以快捷打开。</p>
+<hr>
+<p>Upd 2020-03-23</p>
+<p>今天我刷 b 站的时候看到链接变成 <code>BV</code> 开头的了……然后我看到了<a href="https://www.bilibili.com/read/cv5167957">这个</a>。</p>
+<p>我 tm 刚写了一个月的东西就这么注定逐渐荒废掉了？？？</p>
+<p>还好之前的还能用。</p>
+<p>而且我的更新压力很小啊嘿嘿嘿</p>
+<h3 id="更新——快速打开指定-BV-号视频"><a href="#更新——快速打开指定-BV-号视频" class="headerlink" title="更新——快速打开指定 BV 号视频"></a>更新——快速打开指定 BV 号视频</h3><p><code>BV.bat</code></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="string">&quot;C:\Program Files\Mozilla Firefox\firefox.exe&quot;</span> https://www.bilibili.com/video/BV%1</span><br></pre></td></tr></table></figure>]]></content>
+      <tags>
+        <tag>分享</tag>
       </tags>
   </entry>
   <entry>
